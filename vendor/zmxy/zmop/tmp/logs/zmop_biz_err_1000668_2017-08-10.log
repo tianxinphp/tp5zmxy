@@ -1,0 +1,2 @@
+2017-08-10 10:23:27	{"encrypted":false,"biz_response":"{\"success\":false,\"error_code\":\"ZMCSP.illegal_argument\",\"error_message\":\"参数[transaction_id]不是有效的入参\"}"}
+2017-08-10 11:25:23	{"encrypted":false,"biz_response":"{\"success\":false,\"error_code\":\"ZMCSP.arrangement_error\",\"error_message\":\"合约异常\"}"}
