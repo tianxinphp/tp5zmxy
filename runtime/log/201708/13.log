@@ -1,0 +1,102 @@
+---------------------------------------------------------------
+[ 2017-08-13T16:49:30+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=12116
+[ error ] [8]Array to string conversion
+---------------------------------------------------------------
+[ 2017-08-13T16:50:40+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=12116
+[ error ] [8]Array to string conversion
+---------------------------------------------------------------
+[ 2017-08-13T16:52:52+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=10718
+[ error ] [8]Array to string conversion
+---------------------------------------------------------------
+[ 2017-08-13T16:55:18+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=15280
+[ error ] [8]Array to string conversion
+---------------------------------------------------------------
+[ 2017-08-13T16:57:35+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=11503
+[ error ] [8]Trying to get property of non-object
+---------------------------------------------------------------
+[ 2017-08-13T16:58:23+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=11503
+[ error ] [8]Trying to get property of non-object
+---------------------------------------------------------------
+[ 2017-08-13T16:59:57+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=11503
+[ error ] [8]Trying to get property of non-object
+---------------------------------------------------------------
+[ 2017-08-13T17:04:39+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=11503
+[ error ] [8]Trying to get property of non-object
+---------------------------------------------------------------
+[ 2017-08-13T17:16:00+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=10015
+[ error ] [8]Trying to get property of non-object
+---------------------------------------------------------------
+[ 2017-08-13T17:22:47+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=16669
+[ error ] [8]Use of undefined constant ddddddddd - assumed 'ddddddddd'
+---------------------------------------------------------------
+[ 2017-08-13T17:23:34+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=16669
+[ error ] [8]Use of undefined constant ddddddddd - assumed 'ddddddddd'
+---------------------------------------------------------------
+[ 2017-08-13T17:28:38+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=18989
+[ error ] [2]call_user_func() expects parameter 1 to be a valid callback, cannot access private method app\zmxy\controller\Index::whitelist()
+---------------------------------------------------------------
+[ 2017-08-13T17:30:14+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=12404
+[ error ] [2]call_user_func() expects parameter 1 to be a valid callback, cannot access private method app\zmxy\controller\Index::whitelist()
+---------------------------------------------------------------
+[ 2017-08-13T17:30:24+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=12404
+[ error ] [2]call_user_func() expects parameter 1 to be a valid callback, cannot access private method app\zmxy\controller\Index::whitelist()
+---------------------------------------------------------------
+[ 2017-08-13T17:31:04+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=12404
+[ error ] [2]call_user_func() expects parameter 1 to be a valid callback, cannot access private method app\zmxy\controller\Index::whitelist()
+---------------------------------------------------------------
+[ 2017-08-13T17:31:22+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=19053
+[ error ] [2]call_user_func() expects parameter 1 to be a valid callback, cannot access private method app\zmxy\controller\Index::whitelist()
+---------------------------------------------------------------
+[ 2017-08-13T17:31:48+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=19053
+[ error ] [2]call_user_func() expects parameter 1 to be a valid callback, cannot access private method app\zmxy\controller\Index::whitelist()
+---------------------------------------------------------------
+[ 2017-08-13T17:35:31+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=16853
+[ error ] [64]Can't use method return value in write context
+---------------------------------------------------------------
+[ 2017-08-13T17:35:41+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=17094
+[ error ] [64]Can't use method return value in write context
+---------------------------------------------------------------
+[ 2017-08-13T17:36:24+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=15520
+[ error ] [64]Cannot redeclare class app\index\controller\ZmxyCustomerCertificationInitialize
+---------------------------------------------------------------
+[ 2017-08-13T17:36:53+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=11356
+[ error ] [64]Cannot redeclare class app\index\controller\ZmxyCustomerCertificationInitialize
+---------------------------------------------------------------
+[ 2017-08-13T17:41:20+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=11356
+[ error ] [0]variable type error： boolean
+---------------------------------------------------------------
+[ 2017-08-13T18:44:16+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=11356
+[ error ] [64]Cannot redeclare class RSAUtil
+---------------------------------------------------------------
+[ 2017-08-13T18:45:04+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=11356
+[ error ] [64]Cannot redeclare class RSAUtil
+---------------------------------------------------------------
+[ 2017-08-13T18:45:49+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=11724
+[ error ] [64]Cannot redeclare class RSAUtil
+---------------------------------------------------------------
+[ 2017-08-13T18:45:57+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=11724
+[ error ] [64]Cannot redeclare class RSAUtil
+---------------------------------------------------------------
+[ 2017-08-13T18:46:12+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=12924
+[ error ] [64]Cannot redeclare class RSAUtil
+---------------------------------------------------------------
+[ 2017-08-13T18:47:29+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=13171
+[ error ] [64]Cannot redeclare class RSAUtil
+---------------------------------------------------------------
+[ 2017-08-13T18:47:55+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=13171
+[ error ] [64]Cannot redeclare class RSAUtil
+---------------------------------------------------------------
+[ 2017-08-13T20:28:20+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=13171
+[ error ] [2]Missing argument 1 for app\zmxy\controller\ZhimaAuthInfoAuthorize::zhimaAuthInfo(), called in E:\xiaocong\projects\tp5zmxy\application\zmxy\controller\Index.php on line 55 and defined
+---------------------------------------------------------------
+[ 2017-08-13T20:29:52+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=13171
+[ error ] [2]Missing argument 1 for app\zmxy\controller\ZhimaAuthInfoAuthorize::zhimaAuthInfo(), called in E:\xiaocong\projects\tp5zmxy\application\zmxy\controller\Index.php on line 55 and defined
+---------------------------------------------------------------
+[ 2017-08-13T20:30:09+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=13171
+[ error ] [2]Missing argument 1 for app\zmxy\controller\ZhimaAuthInfoAuthorize::zhimaAuthInfo(), called in E:\xiaocong\projects\tp5zmxy\application\zmxy\controller\Index.php on line 56 and defined
+---------------------------------------------------------------
+[ 2017-08-13T20:31:13+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=13171
+[ error ] [1]Class 'app\zmxy\controller\ZmopClient' not found
+---------------------------------------------------------------
+[ 2017-08-13T20:32:01+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=13171
+[ error ] [1]Class 'app\zmxy\controller\ZmopClient' not found
