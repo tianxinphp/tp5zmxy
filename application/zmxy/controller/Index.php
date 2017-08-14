@@ -8,10 +8,13 @@
 namespace app\zmxy\controller;
 use think\Controller;
 use think\Request;
+use think\Db;
 include ZMXY_PATH.'Logger.php';
 include 'ZmxyCustomerCertificationInitialize.php';
 include 'ZhimaCustomerCertificationCertify.php';
 include 'ZhimaAuthInfoAuthorize.php';
+include 'ZmxyAuthRetrun.php';
+include 'ZhimaCreditWatchlistiiGet.php';
 class Index extends Controller
 {
     //请求令牌
@@ -38,49 +41,118 @@ class Index extends Controller
     //请求域名
     private $requestIp;
 
-    //认证成功返回url
-    private $returnUrl='http://www.baidu.com';
+    //用户open_id
+    private $open_id;
     /**
      * 在使用芝麻认证接口前调用
      * @var array前置方法列表
      */
     protected $beforeActionList = [
-        'securityVerificate',//安全认证
-        'whitelist'//白名单调用
+        'securityVerificate'=>  ['only'=>'zmxy'],//安全认证
+        'whitelist'=>  ['only'=>'zmxy']//白名单调用
     ];
 
+    /**
+     * 芝麻信用授权页面
+     */
     public function zmxy(){
         if($this->requestResult){
-            //芝麻信用认证初始化
-            $zmxyInitialize=new ZmxyCustomerCertificationInitialize();
-            //=======================查询数据库,获取必要参数START============
-
-            //========================查询数据库,获取必要参数END========
-            $initializeResult=$zmxyInitialize->zhimaInitialize($pram='');
-            if($initializeResult->success&&$initializeResult->biz_no){
-                $this->biz_no=$initializeResult->biz_no;
+            //身份认证通过,查看数据库是否进行过信用授权
+            $isAuthorize=$this->isAuthorize($this->uuid);
+            if($isAuthorize){
+                //没有进行授权认证查询信息进行授权
                 $zhimaAuthInfo=new ZhimaAuthInfoAuthorize();
-
-                $AuthInfo=$zhimaAuthInfo->zhimaAuthInfo($pram='');
-                $this->recordLog($AuthInfo);
-                var_dump($AuthInfo);
-                die();
-                //初始化成功
-                $zmxyCertify =new ZhimaCustomerCertificationCertify();
-                $certifyPram=array(
-                    'biz_no'=>$this->biz_no,
-                    'returnUrl'=>$this->returnUrl
-                );
-                $CertifyResult=$zmxyCertify->zhimaCertify($certifyPram);
-                $this->recordLog($CertifyResult);
+                $authInfo=$this->authInfo($this->uuid);//查询出用户的信息
+                if($authInfo){
+                    $authUrl=$zhimaAuthInfo->zhimaAuthInfo($authInfo);//进入芝麻认证页面
+                    if($authUrl){//有返回值
+                        Header("HTTP/1.1 303 See Other");
+                        Header("Location: $authUrl");//跳转芝麻信用接口
+                        exit;
+                    }else{
+                        $this->requestResult=false;
+                        $this->requestMsg="芝麻信用初始化认证失败";
+                        $this->failPost();
+                    }
+                }else{
+                    $this->requestResult=false;
+                    $this->requestMsg="无此用户";
+                    $this->failPost();
+                }
             }else{
                 $this->requestResult=false;
-                $this->requestResult="芝麻信用初始化认证失败";
+                $this->requestMsg="芝麻信用已认证";
                 $this->failPost();
             }
         }else{
             $this->failPost();
         }
+    }
+
+    /**
+     * 芝麻信用权限成功返回解码
+     */
+    public function zmxyAuthRetrun(){
+        $request = Request::instance();//建立请求实例
+        $retrunObj=new ZmxyAuthRetrun;//建立解码实例
+        $retrunResult=urldecode($retrunObj->zmxyRetrun());//调用解码方法
+        //=================分割返回数据参数，比如open_id等START==========
+        $firstInterception=explode('&',$retrunResult);
+        $resultArray=array();
+        foreach ($firstInterception as $value){
+            $secondInterception=explode('=',$value);
+            $resultArray[$secondInterception[0]]=$secondInterception[1];
+        }
+        //================END=================================================
+        if($resultArray['success']){//授权成功
+            $this->open_id=$resultArray['open_id'];//赋予当前授权用户open_id
+            $inlineObj=new ZhimaCreditWatchlistiiGet();//建立行内关注验证
+            $inlineAttention=$inlineObj->zhimaWatchlist($resultArray);//执行行内关注实例
+            $authInfo=$this->authInfo($resultArray['state']);//查询出用户的信息
+            //授权成功,添加数据库信息
+            Db::startTrans();
+            try {
+                Db::name('zhima_watch_list')
+                    ->insert(['uid'=>$authInfo['uid'],'result'=>$inlineAttention,'name'=>$authInfo['real_name'],'phone'=>$authInfo['cell_phone'],'idcard'=>$authInfo['idcard'],'openid'=>$this->open_id,'raw'=>$request->url(),'add_time'=>date('Y-m-d H-i-s')]);
+                // 提交事务
+                Db::commit();
+            } catch (\Exception $e) {
+                // 回滚事务
+                Db::rollback();
+            }
+            //================获取芝麻信用分STRAT=======================
+
+            //================END=======================================
+            $this->requestResult=true;
+        }else{
+            $requestMsg=$resultArray['error_message'];
+            $this->recordLog($resultArray);
+            $this->failPost();
+        }
+    }
+    /**
+     * @param $uuid 用户id
+     * @return bool 返回是否已绑定
+     */
+    private function isAuthorize($uuid){
+        $uuid=2779566;
+        $result = Db::name('zhima_score')->where('uid', $uuid)->select();
+        if($result){
+//            return false;
+            return true;
+        }else{
+            return true;
+        }
+    }
+
+    /**
+     * @param $uuid 用户id
+     * @return false|\PDOStatement|string|\think\Collection
+     */
+    private function authInfo($uuid){
+        $uuid=2779566;
+        $result = Db::name('member_info')->where('uid', $uuid)->select();
+        return $result[0];
     }
 
     /**

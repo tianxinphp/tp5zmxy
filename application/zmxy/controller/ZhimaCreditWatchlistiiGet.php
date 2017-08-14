@@ -2,19 +2,21 @@
 /**
  * Created by PhpStorm.
  * User: Administrator
- * Date: 2017/8/13
- * Time: 20:20
+ * Date: 2017/8/14 0014
+ * Time: 下午 5:32
  */
 
 namespace app\zmxy\controller;
 use think\Controller;
+use think\Request;
 include_once ZMXY_PATH.'zmop/ZmopClient.php';
 include_once ZMXY_PATH.'Logger.php';
-include_once ZMXY_PATH.'zmop/request/ZhimaAuthInfoAuthorizeRequest.php';
+include_once ZMXY_PATH.'zmop/request/ZhimaCreditWatchlistiiGetRequest.php';
 defined('SIGNTYPE') or define('SIGNTYPE','RSA');//签名方式,默认为RSA,可使用RSA2
-class ZhimaAuthInfoAuthorize extends Controller
+
+class ZhimaCreditWatchlistiiGet extends  controller
 {
-//芝麻信用网关地址
+    //芝麻信用网关地址
     public $gatewayUrl = "https://zmopenapi.zmxy.com.cn/openapi.do";
     //商户私钥文件
     public $privateKeyFile;
@@ -48,19 +50,28 @@ class ZhimaAuthInfoAuthorize extends Controller
      * 芝麻认证
      * @return bool|mixed H5url路径
      */
-    public function zhimaAuthInfo($pram)
+    public function zhimaWatchlist($pram)
     {
         $client = new \ZmopClient($this->gatewayUrl,$this->appId,$this->charset,$this->privateKeyFile,$this->zmPublicKeyFile);
-        $request = new \ZhimaAuthInfoAuthorizeRequest();
+        $request = new \ZhimaCreditWatchlistiiGetRequest();
         $request->setChannel("apppc");
         $request->setPlatform("zmop");
-        $request->setIdentityType("2");// 必要参数
-        $pram['real_name']='田鑫';
-        $pram['idcard']='321023199507252612';
-        $request->setIdentityParam("{\"name\":\"".$pram['real_name']."\",\"certType\":\"IDENTITY_CARD\",\"certNo\":\"".$pram['idcard']."\",\"state\":\"".$pram['uid']."\"}");// 必要参数
-        $request->setBizParams("{\"auth_code\":\"M_H5\",\"channelType\":\"app\"}");//
-        $url = $client->generatePageRedirectInvokeUrl($request);
-        return $url;
+        $request->setProductCode("w1010100100000000022");// 必要参数
+        $request->setTransactionId($this->createTransactionId());// 必要参数
+        $request->setOpenId($pram['open_id']);// 必要参数
+        $response = $client->execute($request);
+        return json_encode($response);
     }
 
+    /**
+     * 生成32位商户请求的唯一标志
+     * @param string $definition商户请求的唯一标志前缀
+     * @return 32位商户请求的唯一标志
+     */
+    private function createTransactionId($definition='XCQB'){
+        $timestrap=time();
+        $date=date('YmdHis',$timestrap);
+        $radom=rand(1000,9999);//末尾4位随机数
+        return $definition.$timestrap.$date.$radom;
+    }
 }

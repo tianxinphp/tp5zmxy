@@ -1,0 +1,237 @@
+---------------------------------------------------------------
+[ 2017-08-14T14:57:51+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=17504
+[ sql ] [ DB ] CONNECT:[ UseTime:4.538086s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_zhima_score` [ RunTime:0.431641s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_zhima_score` WHERE  `uid` = 2779566 LIMIT 1 [ RunTime:0.035157s ]
+[ error ] [2]Missing argument 1 for think\Model::data(), called in D:\xiaocong\projects\tp5zmxy\thinkphp\library\think\Model.php on line 553 and defined
+---------------------------------------------------------------
+[ 2017-08-14T14:58:50+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=17504
+[ sql ] [ DB ] CONNECT:[ UseTime:0.064453s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_zhima_score` [ RunTime:0.032226s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_zhima_score` WHERE  `uid` = 2779566 LIMIT 1 [ RunTime:0.044921s ]
+[ error ] [2]Missing argument 1 for think\Model::data(), called in D:\xiaocong\projects\tp5zmxy\thinkphp\library\think\Model.php on line 553 and defined
+---------------------------------------------------------------
+[ 2017-08-14T15:00:06+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=17504
+[ sql ] [ DB ] CONNECT:[ UseTime:0.057618s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_zhima_score` [ RunTime:0.037110s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_zhima_score` WHERE  `uid` = 2779566 LIMIT 1 [ RunTime:0.035156s ]
+[ error ] [2]Missing argument 1 for think\Model::data(), called in D:\xiaocong\projects\tp5zmxy\thinkphp\library\think\Model.php on line 553 and defined
+---------------------------------------------------------------
+[ 2017-08-14T15:00:27+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=17504
+[ sql ] [ DB ] CONNECT:[ UseTime:1.402343s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_zhima_score` [ RunTime:0.032227s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_zhima_score` WHERE  `uid` = 2779566 LIMIT 1 [ RunTime:0.043945s ]
+[ error ] [2]Missing argument 1 for think\Model::data(), called in D:\xiaocong\projects\tp5zmxy\thinkphp\library\think\Model.php on line 553 and defined
+---------------------------------------------------------------
+[ 2017-08-14T15:01:37+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=17504
+[ sql ] [ DB ] CONNECT:[ UseTime:3.074219s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_zhima_score` [ RunTime:0.043946s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_zhima_score` WHERE  `uid` = 2779566 LIMIT 1 [ RunTime:0.044922s ]
+[ error ] [2]Missing argument 1 for think\Model::data(), called in D:\xiaocong\projects\tp5zmxy\thinkphp\library\think\Model.php on line 553 and defined
+---------------------------------------------------------------
+[ 2017-08-14T15:02:11+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=15175
+[ sql ] [ DB ] CONNECT:[ UseTime:0.050782s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_zhima_score` [ RunTime:0.038086s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_zhima_score` WHERE  `uid` = 2779566 LIMIT 1 [ RunTime:0.359375s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_zhima_score` WHERE  `id` = 2779566 LIMIT 1 [ RunTime:0.031250s ]
+---------------------------------------------------------------
+[ 2017-08-14T15:02:41+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=15175
+[ sql ] [ DB ] CONNECT:[ UseTime:7.074219s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_zhima_score` [ RunTime:0.038086s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_zhima_score` WHERE  `uid` = 2779566 LIMIT 1 [ RunTime:0.047852s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_zhima_score` WHERE  `id` = 2779566 LIMIT 1 [ RunTime:0.036133s ]
+---------------------------------------------------------------
+[ 2017-08-14T15:04:35+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=15175
+[ sql ] [ DB ] CONNECT:[ UseTime:0.387695s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_zhima_score` [ RunTime:0.125000s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_zhima_score` WHERE  `uid` = 2779566 LIMIT 1 [ RunTime:0.373047s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_zhima_score` WHERE  `id` = 2779566 LIMIT 1 [ RunTime:0.037109s ]
+---------------------------------------------------------------
+[ 2017-08-14T15:04:39+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=15175
+[ sql ] [ DB ] CONNECT:[ UseTime:0.396484s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_zhima_score` [ RunTime:0.038086s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_zhima_score` WHERE  `uid` = 2779566 LIMIT 1 [ RunTime:0.033203s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_zhima_score` WHERE  `id` = 2779566 LIMIT 1 [ RunTime:0.043945s ]
+---------------------------------------------------------------
+[ 2017-08-14T15:16:06+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=15175
+[ sql ] [ DB ] CONNECT:[ UseTime:0.077148s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_zhima_score` [ RunTime:0.041016s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_zhima_score` WHERE  `uid` = 2779566 LIMIT 1 [ RunTime:0.034180s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_zhima_score` WHERE  `id` = 2779566 LIMIT 1 [ RunTime:0.050781s ]
+---------------------------------------------------------------
+[ 2017-08-14T15:24:47+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=15175
+[ sql ] [ DB ] CONNECT:[ UseTime:0.171875s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_zhima_score` [ RunTime:0.135742s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_zhima_score` WHERE  `uid` = 2779566 [ RunTime:1.088867s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_member_info` [ RunTime:0.513672s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_member_info` WHERE  `uid` = 2779566 [ RunTime:0.071289s ]
+---------------------------------------------------------------
+[ 2017-08-14T15:26:20+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=15175
+[ sql ] [ DB ] CONNECT:[ UseTime:2.325196s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_zhima_score` [ RunTime:0.299805s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_zhima_score` WHERE  `uid` = 2779566 [ RunTime:0.117187s ]
+---------------------------------------------------------------
+[ 2017-08-14T15:26:54+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=15175
+[ sql ] [ DB ] CONNECT:[ UseTime:0.080078s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_zhima_score` [ RunTime:0.072266s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_zhima_score` WHERE  `uid` = 2779566 [ RunTime:0.069336s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_member_info` [ RunTime:0.044922s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_member_info` WHERE  `uid` = 2779566 [ RunTime:0.057617s ]
+---------------------------------------------------------------
+[ 2017-08-14T15:32:11+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=15175
+[ sql ] [ DB ] CONNECT:[ UseTime:0.132813s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_zhima_score` [ RunTime:0.220703s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_zhima_score` WHERE  `uid` = 2779566 [ RunTime:0.043945s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_member_info` [ RunTime:0.105469s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_member_info` WHERE  `uid` = 2779566 [ RunTime:0.080078s ]
+---------------------------------------------------------------
+[ 2017-08-14T15:33:33+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=19946
+[ sql ] [ DB ] CONNECT:[ UseTime:0.424805s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_zhima_score` [ RunTime:0.198242s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_zhima_score` WHERE  `uid` = 2779566 [ RunTime:0.093750s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_member_info` [ RunTime:0.101563s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_member_info` WHERE  `uid` = 2779566 [ RunTime:0.156250s ]
+[ error ] [4]语法错误: unexpected 'auth_code' (T_STRING)
+---------------------------------------------------------------
+[ 2017-08-14T15:36:38+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=15256
+[ sql ] [ DB ] CONNECT:[ UseTime:1.243164s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_zhima_score` [ RunTime:0.049805s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_zhima_score` WHERE  `uid` = 2779566 [ RunTime:0.030273s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_member_info` [ RunTime:0.078125s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_member_info` WHERE  `uid` = 2779566 [ RunTime:0.137695s ]
+---------------------------------------------------------------
+[ 2017-08-14T15:48:15+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=17491
+[ sql ] [ DB ] CONNECT:[ UseTime:1.632812s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_zhima_score` [ RunTime:0.110352s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_zhima_score` WHERE  `uid` = 2779566 [ RunTime:0.222656s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_member_info` [ RunTime:0.120117s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_member_info` WHERE  `uid` = 2779566 [ RunTime:0.129883s ]
+---------------------------------------------------------------
+[ 2017-08-14T16:08:20+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ sql ] [ DB ] CONNECT:[ UseTime:2.083984s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_zhima_score` [ RunTime:0.056640s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_zhima_score` WHERE  `uid` = 2779566 [ RunTime:0.033203s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_member_info` [ RunTime:0.044922s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_member_info` WHERE  `uid` = 2779566 [ RunTime:1.052734s ]
+---------------------------------------------------------------
+[ 2017-08-14T16:12:20+08:00 ] 127.0.0.1 127.0.0.1 GET /zmxyAuthRetrun
+[ error ] [1]Class 'app\zmxy\controller\Request' not found
+---------------------------------------------------------------
+[ 2017-08-14T16:12:21+08:00 ] 127.0.0.1 127.0.0.1 GET /zmxyAuthRetrun
+[ error ] [1]Class 'app\zmxy\controller\Request' not found
+---------------------------------------------------------------
+[ 2017-08-14T16:12:22+08:00 ] 127.0.0.1 127.0.0.1 GET /zmxyAuthRetrun
+[ error ] [1]Class 'app\zmxy\controller\Request' not found
+---------------------------------------------------------------
+[ 2017-08-14T16:13:08+08:00 ] 127.0.0.1 127.0.0.1 GET /zmxyAuthRetrun
+[ error ] [0]验签失败:
+---------------------------------------------------------------
+[ 2017-08-14T16:14:48+08:00 ] 127.0.0.1 127.0.0.1 GET /zmxyAuthRetrun
+[ error ] [0]验签失败:
+---------------------------------------------------------------
+[ 2017-08-14T17:16:38+08:00 ] 127.0.0.1 127.0.0.1 GET /zmxyAuthRetrun
+[ sql ] [ DB ] CONNECT:[ UseTime:0.120117s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_zhima_watch_list` [ RunTime:0.040039s ]
+[ error ] [0]数据表字段不存在:[status]
+---------------------------------------------------------------
+[ 2017-08-14T17:18:49+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ sql ] [ DB ] CONNECT:[ UseTime:1.495117s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_zhima_score` [ RunTime:2.909180s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_zhima_score` WHERE  `uid` = 2779566 [ RunTime:0.125000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_member_info` [ RunTime:0.108399s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_member_info` WHERE  `uid` = 2779566 [ RunTime:0.506836s ]
+---------------------------------------------------------------
+[ 2017-08-14T17:54:58+08:00 ] 127.0.0.1 127.0.0.1 GET /zmxyAuthRetrun
+[ error ] [8]Undefined property: app\zmxy\controller\Index::$status
+---------------------------------------------------------------
+[ 2017-08-14T17:56:01+08:00 ] 127.0.0.1 127.0.0.1 GET /zmxyAuthRetrun
+[ error ] [8]未定义数组索引: status
+---------------------------------------------------------------
+[ 2017-08-14T17:56:26+08:00 ] 127.0.0.1 127.0.0.1 GET /zmxyAuthRetrun
+[ error ] [8]未定义数组索引: status
+---------------------------------------------------------------
+[ 2017-08-14T17:56:39+08:00 ] 127.0.0.1 127.0.0.1 GET /zmxyAuthRetrun
+[ sql ] [ DB ] CONNECT:[ UseTime:0.081055s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_member_info` [ RunTime:0.030273s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_member_info` WHERE  `uid` = 2779566 [ RunTime:0.034180s ]
+---------------------------------------------------------------
+[ 2017-08-14T17:57:11+08:00 ] 127.0.0.1 127.0.0.1 GET /zmxyAuthRetrun
+[ sql ] [ DB ] CONNECT:[ UseTime:0.055664s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_member_info` [ RunTime:0.060546s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_member_info` WHERE  `uid` = 2779566 [ RunTime:0.030274s ]
+---------------------------------------------------------------
+[ 2017-08-14T17:57:23+08:00 ] 127.0.0.1 127.0.0.1 GET /zmxyAuthRetrun
+[ sql ] [ DB ] CONNECT:[ UseTime:0.059571s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_member_info` [ RunTime:0.034179s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_member_info` WHERE  `uid` = 2779566 [ RunTime:0.034180s ]
+---------------------------------------------------------------
+[ 2017-08-14T17:57:49+08:00 ] 127.0.0.1 127.0.0.1 GET /?XDEBUG_SESSION_START=14945
+[ sql ] [ DB ] CONNECT:[ UseTime:0.059571s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_zhima_score` [ RunTime:2.139648s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_zhima_score` WHERE  `uid` = 2779566 [ RunTime:0.843750s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_member_info` [ RunTime:0.050781s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_member_info` WHERE  `uid` = 2779566 [ RunTime:0.045898s ]
+---------------------------------------------------------------
+[ 2017-08-14T17:58:51+08:00 ] 127.0.0.1 127.0.0.1 GET /zmxyAuthRetrun
+[ sql ] [ DB ] CONNECT:[ UseTime:0.053711s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_member_info` [ RunTime:0.039063s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_member_info` WHERE  `uid` = 2779566 [ RunTime:0.039063s ]
+---------------------------------------------------------------
+[ 2017-08-14T18:00:59+08:00 ] 127.0.0.1 127.0.0.1 GET /zmxyAuthRetrun
+[ sql ] [ DB ] CONNECT:[ UseTime:0.071289s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_member_info` [ RunTime:0.046875s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_member_info` WHERE  `uid` = 2779566 [ RunTime:0.043946s ]
+---------------------------------------------------------------
+[ 2017-08-14T18:01:22+08:00 ] 127.0.0.1 127.0.0.1 GET /zmxyAuthRetrun
+[ sql ] [ DB ] CONNECT:[ UseTime:0.093750s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_member_info` [ RunTime:0.033203s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_member_info` WHERE  `uid` = 2779566 [ RunTime:0.032227s ]
+---------------------------------------------------------------
+[ 2017-08-14T18:02:16+08:00 ] 127.0.0.1 127.0.0.1 GET /zmxyAuthRetrun
+[ sql ] [ DB ] CONNECT:[ UseTime:0.072266s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_member_info` [ RunTime:0.035156s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_member_info` WHERE  `uid` = 2779566 [ RunTime:0.079102s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_zhima_watch_list` [ RunTime:0.061523s ]
+[ sql ] [ SQL ] INSERT INTO `lzh_zhima_watch_list` (`uid` , `result` , `name` , `phone` , `idcard` , `openid` , `raw` , `add_time`) VALUES (2779566 , '{\"success\":true,\"biz_no\":\"ZM201708143000000950500577409622\",\"is_matched\":false}' , '李超阳' , '15868621635' , '52250119900203705X' , '268815058295867050623063052' , 'http://xiaocong.tpzmxy.com/zmxyAuthRetrun' , '2017-08-14 18-02-16') [ RunTime:0.136719s ]
+---------------------------------------------------------------
+[ 2017-08-14T18:03:36+08:00 ] 127.0.0.1 127.0.0.1 GET /zmxyAuthRetrun
+[ sql ] [ DB ] CONNECT:[ UseTime:0.115234s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_member_info` [ RunTime:0.076172s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_member_info` WHERE  `uid` = 2779566 [ RunTime:0.060547s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_zhima_watch_list` [ RunTime:0.058593s ]
+[ sql ] [ SQL ] INSERT INTO `lzh_zhima_watch_list` (`uid` , `result` , `name` , `phone` , `idcard` , `openid` , `raw` , `add_time`) VALUES (2779566 , '{\"success\":true,\"biz_no\":\"ZM201708143000000520500577410053\",\"is_matched\":false}' , '李超阳' , '15868621635' , '52250119900203705X' , '268815058295867050623063052' , 'zmxyAuthRetrun' , '2017-08-14 18-03-35') [ RunTime:0.055664s ]
+---------------------------------------------------------------
+[ 2017-08-14T18:04:05+08:00 ] 127.0.0.1 127.0.0.1 GET /zmxyAuthRetrun
+[ sql ] [ DB ] CONNECT:[ UseTime:0.057617s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_member_info` [ RunTime:0.076172s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_member_info` WHERE  `uid` = 2779566 [ RunTime:0.040040s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_zhima_watch_list` [ RunTime:0.038086s ]
+[ sql ] [ SQL ] INSERT INTO `lzh_zhima_watch_list` (`uid` , `result` , `name` , `phone` , `idcard` , `openid` , `raw` , `add_time`) VALUES (2779566 , '{\"success\":true,\"biz_no\":\"ZM201708143000000440500577434933\",\"is_matched\":false}' , '李超阳' , '15868621635' , '52250119900203705X' , '268815058295867050623063052' , '' , '2017-08-14 18-04-05') [ RunTime:0.040039s ]
+---------------------------------------------------------------
+[ 2017-08-14T18:05:04+08:00 ] 127.0.0.1 127.0.0.1 GET /zmxyAuthRetrun
+[ sql ] [ DB ] CONNECT:[ UseTime:0.058594s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_member_info` [ RunTime:0.038086s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_member_info` WHERE  `uid` = 2779566 [ RunTime:0.038086s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_zhima_watch_list` [ RunTime:0.517578s ]
+[ sql ] [ SQL ] INSERT INTO `lzh_zhima_watch_list` (`uid` , `result` , `name` , `phone` , `idcard` , `openid` , `add_time`) VALUES (2779566 , '{\"success\":true,\"biz_no\":\"ZM201708143000000720500577448093\",\"is_matched\":false}' , '李超阳' , '15868621635' , '52250119900203705X' , '268815058295867050623063052' , '2017-08-14 18-05-03') [ RunTime:0.205078s ]
+---------------------------------------------------------------
+[ 2017-08-14T18:07:42+08:00 ] 127.0.0.1 127.0.0.1 GET /zmxyAuthRetrun
+[ sql ] [ DB ] CONNECT:[ UseTime:0.050781s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_member_info` [ RunTime:0.034180s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_member_info` WHERE  `uid` = 2779566 [ RunTime:0.031250s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_zhima_watch_list` [ RunTime:0.031250s ]
+[ sql ] [ SQL ] INSERT INTO `lzh_zhima_watch_list` (`uid` , `result` , `name` , `phone` , `idcard` , `openid` , `raw` , `add_time`) VALUES (2779566 , '{\"success\":true,\"biz_no\":\"ZM201708143000000650500577459844\",\"is_matched\":false}' , '李超阳' , '15868621635' , '52250119900203705X' , '268815058295867050623063052' , 'http://xiaocong.tpzmxy.com/zmxyAuthRetrun' , '2017-08-14 18-07-42') [ RunTime:0.033203s ]
+---------------------------------------------------------------
+[ 2017-08-14T18:09:35+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ sql ] [ DB ] CONNECT:[ UseTime:0.058593s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_zhima_score` [ RunTime:0.040039s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_zhima_score` WHERE  `uid` = 2779566 [ RunTime:0.033203s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_member_info` [ RunTime:0.031250s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_member_info` WHERE  `uid` = 2779566 [ RunTime:0.036133s ]
+---------------------------------------------------------------
+[ 2017-08-14T18:09:55+08:00 ] 127.0.0.1 127.0.0.1 GET /zmxyAuthRetrun
+[ sql ] [ DB ] CONNECT:[ UseTime:0.075195s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_member_info` [ RunTime:0.036133s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_member_info` WHERE  `uid` = 2779566 [ RunTime:0.043945s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_zhima_watch_list` [ RunTime:0.069336s ]
+[ sql ] [ SQL ] INSERT INTO `lzh_zhima_watch_list` (`uid` , `result` , `name` , `phone` , `idcard` , `openid` , `raw` , `add_time`) VALUES (2779566 , '{\"success\":true,\"biz_no\":\"ZM201708143000000610500577481133\",\"is_matched\":false}' , '李超阳' , '15868621635' , '52250119900203705X' , '268815058295867050623063052' , '/zmxyAuthRetrun' , '2017-08-14 18-09-55') [ RunTime:0.088867s ]

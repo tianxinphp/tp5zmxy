@@ -8,8 +8,8 @@
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
-//use think\Route;  //导入Route类
-//Route::rule('zmxy/','index/index/zmxy/');
+use think\Route;  //导入Route类
+Route::rule('zmxyAuthRetrun/','zmxy/Index/zmxyAuthRetrun/');
 return [
     '__pattern__' => [
         'name' => '\w+',

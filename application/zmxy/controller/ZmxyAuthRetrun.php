@@ -2,19 +2,21 @@
 /**
  * Created by PhpStorm.
  * User: Administrator
- * Date: 2017/8/13
- * Time: 20:20
+ * Date: 2017/8/14 0014
+ * Time: 下午 4:00
  */
 
 namespace app\zmxy\controller;
 use think\Controller;
+use think\Request;
 include_once ZMXY_PATH.'zmop/ZmopClient.php';
 include_once ZMXY_PATH.'Logger.php';
 include_once ZMXY_PATH.'zmop/request/ZhimaAuthInfoAuthorizeRequest.php';
 defined('SIGNTYPE') or define('SIGNTYPE','RSA');//签名方式,默认为RSA,可使用RSA2
-class ZhimaAuthInfoAuthorize extends Controller
+
+class ZmxyAuthRetrun extends controller
 {
-//芝麻信用网关地址
+    //芝麻信用网关地址
     public $gatewayUrl = "https://zmopenapi.zmxy.com.cn/openapi.do";
     //商户私钥文件
     public $privateKeyFile;
@@ -48,19 +50,21 @@ class ZhimaAuthInfoAuthorize extends Controller
      * 芝麻认证
      * @return bool|mixed H5url路径
      */
-    public function zhimaAuthInfo($pram)
+    public function zmxyRetrun()
     {
-        $client = new \ZmopClient($this->gatewayUrl,$this->appId,$this->charset,$this->privateKeyFile,$this->zmPublicKeyFile);
-        $request = new \ZhimaAuthInfoAuthorizeRequest();
-        $request->setChannel("apppc");
-        $request->setPlatform("zmop");
-        $request->setIdentityType("2");// 必要参数
-        $pram['real_name']='田鑫';
-        $pram['idcard']='321023199507252612';
-        $request->setIdentityParam("{\"name\":\"".$pram['real_name']."\",\"certType\":\"IDENTITY_CARD\",\"certNo\":\"".$pram['idcard']."\",\"state\":\"".$pram['uid']."\"}");// 必要参数
-        $request->setBizParams("{\"auth_code\":\"M_H5\",\"channelType\":\"app\"}");//
-        $url = $client->generatePageRedirectInvokeUrl($request);
-        return $url;
-    }
+        $request = Request::instance();
+        //从回调URL中获取params参数，此处为示例值
+        $params=$request->only(['params']);
+        //从回调URL中获取sign参数，此处为示例值
+        $sign=$request->only(['sign']);
+        $params = 'gRvUAUCxxlXvVnsKnpf8yHfN6aWmAust31Jm0%2Fg0yvwAtHedKQkkGI8%2BvVB8o8%2FurEeixnY3Rmt6R0GzWFsKOAGz7kkOmu0ZGK1qG0sA%2BWJgz0FK4UyXS%2FyrZsu0BzRVFjLVUxSwKpUY6QJBQI3woygloS%2F3Z6bWyrb7Mrw2979P2lvcURD5%2Fom%2B3YBp%2Fpr3aPjKpIOAKlGZrTDqDeaHsbUmnhHAD4RFcYEnqRco38NNtgLEyZtZ1pinVj8QRa9y5xTjEigcWSBUlcrMGe3piQd0cwGI4B4J8wH%2FfREoILH2p3R61LASzsM6OEH7s5U1ZrtmvmgLNmsHQLGpEogl2A%3D%3D';
+        $sign = 'WEC7%2FwdlrTXF0KzB1j7Y0K7UM4m0jkd0e78Q6huqDEdgCxrWvSMqzIyS5ax7aIErQqeO37MJpiaJt627OWVcVeoHnZGB8A8GNKCDykN%2FZ5cb9GPd2yb2az2ZpCrJyArjWErGMRy3gSyrA%2B2mpfW1l1otMDtQzldoStwPPsu83oQ%3D';
+        // 判断串中是否有%，有则需要decode
+        $params = strstr ( $params, '%' ) ? urldecode ( $params ) : $params;
+        $sign = strstr ( $sign, '%' ) ? urldecode ( $sign ) : $sign;
 
+        $client = new \ZmopClient($this->gatewayUrl,$this->appId,$this->charset,$this->privateKeyFile,$this->zmPublicKeyFile);
+        $result = $client->decryptAndVerifySign ( $params, $sign );
+        return $result;
+    }
 }
