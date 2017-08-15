@@ -55,8 +55,8 @@ class ZhimaAuthInfoAuthorize extends Controller
         $request->setChannel("apppc");
         $request->setPlatform("zmop");
         $request->setIdentityType("2");// 必要参数
-        $pram['real_name']='田鑫';
-        $pram['idcard']='321023199507252612';
+//        $pram['real_name']='田鑫';
+//        $pram['idcard']='321023199507252612';
         $request->setIdentityParam("{\"name\":\"".$pram['real_name']."\",\"certType\":\"IDENTITY_CARD\",\"certNo\":\"".$pram['idcard']."\",\"state\":\"".$pram['uid']."\"}");// 必要参数
         $request->setBizParams("{\"auth_code\":\"M_H5\",\"channelType\":\"app\"}");//
         $url = $client->generatePageRedirectInvokeUrl($request);

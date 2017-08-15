@@ -10,6 +10,8 @@
 // +----------------------------------------------------------------------
 use think\Route;  //导入Route类
 Route::rule('zmxyAuthRetrun/','zmxy/Index/zmxyAuthRetrun/');
+Route::rule('test/','zmxy/Index/test/');
+Route::rule('zhimaCreditQueryByIDCard/','zmxy/Index/zhimaCreditQueryByIDCard/');
 return [
     '__pattern__' => [
         'name' => '\w+',

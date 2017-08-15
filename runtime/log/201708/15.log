@@ -1,0 +1,11 @@
+---------------------------------------------------------------
+[ 2017-08-15T10:17:37+08:00 ] 127.0.0.1 127.0.0.1 GET /zmxyAuthRetrun
+[ sql ] [ DB ] CONNECT:[ UseTime:0.099609s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_member_info` [ RunTime:0.060547s ]
+[ sql ] [ SQL ] SELECT * FROM `lzh_member_info` WHERE  `uid` = 2779566 [ RunTime:0.071289s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_zhima_watch_list` [ RunTime:0.045898s ]
+[ sql ] [ SQL ] INSERT INTO `lzh_zhima_watch_list` (`uid` , `result` , `name` , `phone` , `idcard` , `openid` , `raw` , `add_time`) VALUES (2779566 , '{\"success\":true,\"biz_no\":\"ZM201708153000000620500581488727\",\"is_matched\":false}' , '李超阳' , '15868621635' , '52250119900203705X' , '268815058295867050623063052' , '/zmxyAuthRetrun' , '2017-08-15 10-17-35') [ RunTime:0.110352s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_zhima_score` [ RunTime:0.064453s ]
+[ sql ] [ SQL ] INSERT INTO `lzh_zhima_score` (`uid` , `phone` , `idcard` , `openid` , `score` , `raw` , `add_time`) VALUES (2779566 , '15868621635' , '52250119900203705X' , '268815058295867050623063052' , 659 , '/zmxyAuthRetrun' , '2017-08-15 10-17-36') [ RunTime:0.093750s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `lzh_info_step` [ RunTime:0.042969s ]
+[ sql ] [ SQL ] INSERT INTO `lzh_info_step` (`uid` , `step` , `add_time`) VALUES (2779566 , 'credit_validate' , '2017-08-15 10-17-36') [ RunTime:0.043945s ]

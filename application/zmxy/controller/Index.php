@@ -15,13 +15,14 @@ include 'ZhimaCustomerCertificationCertify.php';
 include 'ZhimaAuthInfoAuthorize.php';
 include 'ZmxyAuthRetrun.php';
 include 'ZhimaCreditWatchlistiiGet.php';
+include 'ZhimaCreditScoreGet.php';
 class Index extends Controller
 {
     //请求令牌
     private $token;
 
     //请求返回域名
-    private $responseDomain;
+    private $responseDomain='http://xiaocong.tpzmxy.com/test';
 
     //用户id
     private $uuid;
@@ -81,7 +82,15 @@ class Index extends Controller
                 }
             }else{
                 $this->requestResult=false;
-                $this->requestMsg="芝麻信用已认证";
+                if( strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') !== false) {//是在微信中打开
+                    $this->requestMsg="history.go(-1)";
+                }else{
+                    $this->requestMsg="apiready=function(){
+	api.alert({title: '小葱钱包', msg: '芝麻信用已认证', }, function(ret, err) {
+		api.closeWin({})
+	});
+}";
+                }
                 $this->failPost();
             }
         }else{
@@ -119,17 +128,77 @@ class Index extends Controller
             } catch (\Exception $e) {
                 // 回滚事务
                 Db::rollback();
+                $this->requestMsg='授权失败';
+                $this->failPost();
+                return false;
             }
             //================获取芝麻信用分STRAT=======================
-
+            $scoreObj=new ZhimaCreditScoreGet();//初始化查询芝麻信用实例
+            $scoretion=$scoreObj->zhimaQueryScore($resultArray);//执行查询方法
+            if($scoretion->success) {
+                //查询成功,添加数据库信息
+                Db::startTrans();
+                try {
+                    Db::name('zhima_score')
+                        ->insert(['uid'=>$authInfo['uid'],'phone'=>$authInfo['cell_phone'],'idcard'=>$authInfo['idcard'],'openid'=>$this->open_id,'score'=>$scoretion->zm_score,'raw'=>$request->url(),'add_time'=>date('Y-m-d H-i-s')]);
+                    // 提交事务
+                    Db::commit();
+                } catch (\Exception $e) {
+                    // 回滚事务
+                    Db::rollback();
+                    $this->requestMsg='查询芝麻分失败';
+                    $this->failPost();
+                    return false;
+                }
+            }else{//查询失败
+                $this->requestMsg=$scoretion->error_message;
+                $this->failPost();
+                return false;
+            }
             //================END=======================================
-            $this->requestResult=true;
+            //==============信用认证执行到结束START==========================
+            Db::startTrans();
+            try {
+                Db::name('info_step')
+                    ->insert(['uid'=>$authInfo['uid'],'step'=>'credit_validate','add_time'=>date('Y-m-d H-i-s')]);
+                // 提交事务
+                Db::commit();
+            } catch (\Exception $e) {
+                // 回滚事务
+                Db::rollback();
+                $this->requestMsg='授权失败';
+                $this->failPost();
+                return false;
+            }
+            //==============信用认证执行到结束END==========================
+            //一切成功,返回
+            if( strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') !== false){//是在微信中打开
+                Header("HTTP/1.1 303 See Other");
+                Header("Location: http://api.yingjila.com/weixin/html/user/user_info_review.html");//跳转微信页面
+                exit;
+            }else{
+                //返回成功
+                $this->requestResult=true;
+                $this->requestMsg='apiready=function(){api.closeWin()}';
+                $responseResult=array(
+                    'requestMsg'=>$this->requestMsg,
+                    'requestResult'=>$this->requestResult,
+                );
+                $this->getHttpResponsePOST($this->responseDomain,$responseResult);
+            }
         }else{
-            $requestMsg=$resultArray['error_message'];
+            $this->requestMsg=$resultArray['error_message'];
             $this->recordLog($resultArray);
             $this->failPost();
         }
     }
+
+    public function test(){
+        Header("HTTP/1.1 303 See Other");
+        Header("Location: http://www.baidu.com");//跳转微信页面
+        exit;
+    }
+
     /**
      * @param $uuid 用户id
      * @return bool 返回是否已绑定
@@ -179,8 +248,8 @@ class Index extends Controller
         $requestLog['isAjax']=var_export($request->isAjax(), true);//是否为ajax
         $requestLog['param']=json_encode($request->param());//参数
         $requestLog['receiveDate']=date('Y-m-d H:i:s');//请求接受时间
-//        $requestLog['token']=$this->token=$request->only(['token']);//获取token
-        $this->token=555;
+        $requestLog['token']=$this->token=$request->only(['token']);//获取token
+//        $this->token=555;测试
         //==========先这么多参数吧,以后有在加===END=================================
         if(VENDOR_STATUS=='prod'){//生产环境下配置
             if(!in_array($requestLog['requestWay'], $this->requestWay)){
@@ -200,8 +269,8 @@ class Index extends Controller
         }
         //数据初步校验通过,发送请求，验证token有效性获取uuid
         $curl_date=array(
-//            'token'=>$requestLog['token'],
-            'token'=>555,
+            'token'=>$requestLog['token'],
+//            'token'=>555,//测试
         );
         $uuidResponse=$this->getHttpResponsePOST($this->requestIp,$curl_date);
         $val = json_decode($uuidResponse);//将数据流转为json对象
@@ -256,10 +325,16 @@ class Index extends Controller
         $data = curl_exec($curl);
         //关闭URL请求
         curl_close($curl);
-//        return $data;
-        return '{"uuid":333,"token":555}';
+        return $data;
+//        return '{"uuid":333,"token":555}';测试
     }
 
+    /**
+     * 三合一调用接口
+     */
+    public function zhimaCreditQueryByIDCard(){
+
+    }
 }
 
 
