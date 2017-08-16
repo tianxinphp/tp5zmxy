@@ -16,6 +16,9 @@ include 'ZhimaAuthInfoAuthorize.php';
 include 'ZmxyAuthRetrun.php';
 include 'ZhimaCreditWatchlistiiGet.php';
 include 'ZhimaCreditScoreGet.php';
+include 'ZhimaCreditAntifraudScoreGet.php';
+include 'ZhimaCreditAntifraudVerify.php';
+include 'ZhimaCreditAntifraudRiskList.php';
 class Index extends Controller
 {
     //请求令牌
@@ -102,6 +105,7 @@ class Index extends Controller
      * 芝麻信用权限成功返回解码
      */
     public function zmxyAuthRetrun(){
+        $db1 = Db::connect('database.db1');
         $request = Request::instance();//建立请求实例
         $retrunObj=new ZmxyAuthRetrun;//建立解码实例
         $retrunResult=urldecode($retrunObj->zmxyRetrun());//调用解码方法
@@ -119,15 +123,15 @@ class Index extends Controller
             $inlineAttention=$inlineObj->zhimaWatchlist($resultArray);//执行行内关注实例
             $authInfo=$this->authInfo($resultArray['state']);//查询出用户的信息
             //授权成功,添加数据库信息
-            Db::startTrans();
+            $db1::startTrans();
             try {
-                Db::name('zhima_watch_list')
+                $db1::name('zhima_watch_list')
                     ->insert(['uid'=>$authInfo['uid'],'result'=>$inlineAttention,'name'=>$authInfo['real_name'],'phone'=>$authInfo['cell_phone'],'idcard'=>$authInfo['idcard'],'openid'=>$this->open_id,'raw'=>$request->url(),'add_time'=>date('Y-m-d H-i-s')]);
                 // 提交事务
-                Db::commit();
+                $db1::commit();
             } catch (\Exception $e) {
                 // 回滚事务
-                Db::rollback();
+                $db1::rollback();
                 $this->requestMsg='授权失败';
                 $this->failPost();
                 return false;
@@ -137,15 +141,15 @@ class Index extends Controller
             $scoretion=$scoreObj->zhimaQueryScore($resultArray);//执行查询方法
             if($scoretion->success) {
                 //查询成功,添加数据库信息
-                Db::startTrans();
+                $db1::startTrans();
                 try {
-                    Db::name('zhima_score')
+                    $db1::name('zhima_score')
                         ->insert(['uid'=>$authInfo['uid'],'phone'=>$authInfo['cell_phone'],'idcard'=>$authInfo['idcard'],'openid'=>$this->open_id,'score'=>$scoretion->zm_score,'raw'=>$request->url(),'add_time'=>date('Y-m-d H-i-s')]);
                     // 提交事务
-                    Db::commit();
+                    $db1::commit();
                 } catch (\Exception $e) {
                     // 回滚事务
-                    Db::rollback();
+                    $db1::rollback();
                     $this->requestMsg='查询芝麻分失败';
                     $this->failPost();
                     return false;
@@ -157,15 +161,15 @@ class Index extends Controller
             }
             //================END=======================================
             //==============信用认证执行到结束START==========================
-            Db::startTrans();
+            $db1::startTrans();
             try {
-                Db::name('info_step')
+                $db1::name('info_step')
                     ->insert(['uid'=>$authInfo['uid'],'step'=>'credit_validate','add_time'=>date('Y-m-d H-i-s')]);
                 // 提交事务
-                Db::commit();
+                $db1::commit();
             } catch (\Exception $e) {
                 // 回滚事务
-                Db::rollback();
+                $db1::rollback();
                 $this->requestMsg='授权失败';
                 $this->failPost();
                 return false;
@@ -204,8 +208,8 @@ class Index extends Controller
      * @return bool 返回是否已绑定
      */
     private function isAuthorize($uuid){
-        $uuid=2779566;
-        $result = Db::name('zhima_score')->where('uid', $uuid)->select();
+        $db1 = Db::connect('database.db1');
+        $result = $db1::name('zhima_score')->where('uid', $uuid)->select();
         if($result){
 //            return false;
             return true;
@@ -219,8 +223,8 @@ class Index extends Controller
      * @return false|\PDOStatement|string|\think\Collection
      */
     private function authInfo($uuid){
-        $uuid=2779566;
-        $result = Db::name('member_info')->where('uid', $uuid)->select();
+        $db1 = Db::connect('database.db1');
+        $result = $db1::name('member_info')->where('uid', $uuid)->select();
         return $result[0];
     }
 
@@ -248,7 +252,8 @@ class Index extends Controller
         $requestLog['isAjax']=var_export($request->isAjax(), true);//是否为ajax
         $requestLog['param']=json_encode($request->param());//参数
         $requestLog['receiveDate']=date('Y-m-d H:i:s');//请求接受时间
-        $requestLog['token']=$this->token=$request->only(['token']);//获取token
+        $onlyPram=$request->only(['token']);
+        $requestLog['token']=$this->token=$onlyPram['token'];//获取token
 //        $this->token=555;测试
         //==========先这么多参数吧,以后有在加===END=================================
         if(VENDOR_STATUS=='prod'){//生产环境下配置
@@ -269,20 +274,44 @@ class Index extends Controller
         }
         //数据初步校验通过,发送请求，验证token有效性获取uuid
         $curl_date=array(
-            'token'=>$requestLog['token'],
-//            'token'=>555,//测试
+            'token'=>$this->token,
         );
-        $uuidResponse=$this->getHttpResponsePOST($this->requestIp,$curl_date);
-        $val = json_decode($uuidResponse);//将数据流转为json对象
-        if($val->token&&$val->token==$this->token&&$val->uuid){//token返回进行验证uuid必须存在,进行下一步
+        //======================验证token 调用接口 START==============================
+//        $uuidResponse=$this->getHttpResponsePOST($this->requestIp,$curl_date);
+//        $val = json_decode($uuidResponse);//将数据流转为json对象
+//        if($val->token&&$val->token==$this->token&&$val->uuid){//token返回进行验证uuid必须存在,进行下一步
+//            $this->requestResult=true;//安全认证成功
+//            $this->uuid=$val->uuid;
+//            $this->recordLog($requestLog);//记录到日志中,以后再记录到数据库中
+//        }else{
+//            $requestLog['requestMsg']=$this->requestMsg='验证失败,请求数据错误';
+//            $this->recordLog($requestLog);//记录到日志中,以后再记录到数据库中
+//            return false;
+//        }
+        //====================验证token 调用接口 END===================================
+        //======================验证token 直接查数据库 START===========================
+        $tokenInfo=$this->queryToken($curl_date);//token信息
+        if($tokenInfo&&$tokenInfo[0]['token']&&$tokenInfo[0]['token']==$this->token&&$tokenInfo[0]['user_id']){//token返回进行验证uuid必须存在,进行下一步
             $this->requestResult=true;//安全认证成功
-            $this->uuid=$val->uuid;
+            $this->uuid=$tokenInfo[0]['user_id'];
             $this->recordLog($requestLog);//记录到日志中,以后再记录到数据库中
         }else{
             $requestLog['requestMsg']=$this->requestMsg='验证失败,请求数据错误';
             $this->recordLog($requestLog);//记录到日志中,以后再记录到数据库中
             return false;
         }
+        //======================验证token 直接查数据库 END===========================
+    }
+
+    /**
+     * 验证token正确性
+     * @param $curl_date token
+     * @return false|\PDOStatement|string|\think\Collection 返回uid+token
+     */
+    private function queryToken($token){
+        $db2 = Db::connect('database.db2');
+        $result=$db2->query('select * from user_token where token="'.$token['token'].'" ');
+        return $result;
     }
 
     /**
@@ -333,7 +362,228 @@ class Index extends Controller
      * 三合一调用接口
      */
     public function zhimaCreditQueryByIDCard(){
+        $request = Request::instance();//生成tp请求实例化对象
+        //获取idcard参数与querydatalist参数
+        $onlyPram=$request->only(['idcard','querydatalist']);
+        if(!$onlyPram['idcard']||!$onlyPram['querydatalist']){//两个有一个不存在退回
+            $this->requestMsg='请求数据有误';
+            $this->failPost();
+        }else{
+            $queryMemberResult=$this->queryMemberInfo($onlyPram['idcard']);//根据身份证查出基本信息
+            if($queryMemberResult&&$queryMemberResult[0]['uid']){
+                $queryPramResult=$this->queryPramInfo($queryMemberResult[0]['uid']);//根据uid查出详细信息
+                if($queryPramResult){
+                    $regex = "/\/|\~|\!|\@|\#|\\$|\%|\^|\&|\*|\(|\)|\_|\+|\{|\}|\:|\<|\>|\?|\[|\]|\,|\.|\/|\;|\'|\`|\-|\=|\\\|\|/";//过滤特殊字符
+                    $midata=array(
+                        'CertType'=>'IDENTITY_CARD',
+                        'CertNo'=>$onlyPram['idcard'],
+                        'Name'=>$queryMemberResult[0]['real_name'],
+                        'Mobile'=>$queryMemberResult[0]['user_name'],
+                        'Address'=>preg_replace($regex,"",$queryMemberResult[0]['address']),
+                        'Mac'=>$queryPramResult[0]['mac_addr'],
+                        'Wifimac'=>'N/A',
+                        'BankCard'=>$queryPramResult[0]['bank_num'],
+                        'Email'=>'N/A',
+                        'Ip'=>$queryPramResult[0]['ip'],
+                        'Imei'=>$queryPramResult[0]['deviceid'],
+                    );
+                    $result=$this->getCreditQuery($midata,$onlyPram['querydatalist']);//获取芝麻信用一系列接口结果
+                    echo $result;
+//                    $this->getHttpResponsePOST($this->responseDomain,$result);
+                }else{
+                    $this->requestMsg='无此用户';
+                    $this->failPost();
+                }
+            }else{
+                $this->requestMsg='无此用户';
+                $this->failPost();
+            }
+        }
+    }
 
+    /**
+     * @param $idcard 身份证
+     * @return mixed 返回身份信息
+     */
+    private function queryMemberInfo($idcard){
+        $db1 = Db::connect('database.db1');//链接小葱钱包数据库
+        $queryMemberInfo=$db1->query('select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="'.$idcard.'" ');
+        return  $queryMemberInfo;
+    }
+
+
+    /**
+     * @param $uid uid
+     * @return mixed 返回身份详细信息
+     */
+    private function queryPramInfo($uid){
+        $db1 = Db::connect('database.db1');//链接小葱钱包数据库
+        $sql='select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "'.$uid.'" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "'.$uid.'" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "'.$uid.'" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "'.$uid.'" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "'.$uid.'" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "'.$uid.'" ';
+        $queryPramInfo =$db1->query($sql);
+        return $queryPramInfo;
+    }
+
+
+
+    private function getCreditQuery($midata,$querydatalist){
+        $result='';//返回结果
+        if(!is_string($querydatalist)){
+            $querydatalist=(string)$querydatalist;
+        }
+        $queryArray=str_split($querydatalist);//将请求过来的要求转为数组
+        if($queryArray[0]==1){
+            //调用芝麻分查询接口
+        }
+        if($queryArray[1]==1){
+            //调用行业关注接口
+        }
+        if($queryArray[2]==1){
+            //调用欺诈评分接口
+            $result=$result.",\"ZhimaCreditAntiFraudScore\":" .$this->generateAntiFraudScoreJsonString($midata);
+        }
+        if($queryArray[3]==1){
+            //调用欺诈信息验证接口
+            $result = $result. ",\"ZhimaCreditAntiFraudVerify\":".$this->GenerateAntiFraudVerifyJsonString($midata);
+        }
+        if($queryArray[4]==1){
+            //调用欺诈关注清单接口
+            $result = $result. ",\"ZhimaCreditAntiFraudVerify\":".$this->GenerateAntiFraudRiskListJsonString($midata);
+        }
+        $result = "{".trim( $result,',')."}";
+        return $result;
+    }
+
+    /**
+     * @param $midata 欺诈需要的参数
+     * @return string 欺诈分信息
+     */
+    private function generateAntiFraudScoreJsonString($midata){
+        //用身份证去查数据库，有记录返回，无记录去查芝麻
+        $db3 = Db::connect('database.db3');//链接欺诈分信用库
+        $antiFraudScoreInfo=$db3->query('select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "'.$midata['CertNo'].'" order by id desc limit 1');
+        if($antiFraudScoreInfo){//数据库有数据
+            //直接返回body
+            return $antiFraudScoreInfo[0]['body'];
+        }else{//调用芝麻信用查欺诈分系统
+            $antiFraudScore=new ZhimaCreditAntifraudScoreGet();//建立查欺诈分实例
+            $antiFraudScoreResult=$antiFraudScore->zhimaAntifraudScore($midata);
+            if($antiFraudScoreResult->success){//查询成功
+                //记录到数据库中
+                $db3->startTrans();
+                try {
+                    $db3->execute('INSERT INTO cqs_zhima_AntiFraudScore_QueryData (MemberIDCard ,PostData,RequestDateTime,Tag,bizNo,Score,body ,Success,TransactionID) VALUES ("'.$midata['CertNo'].'","'.addslashes(json_encode($midata)).'","'.date('Y-m-d H:i:s').'",0,"'.$antiFraudScoreResult->biz_no.'","'.$antiFraudScoreResult->score.'","'.addslashes(json_encode($antiFraudScoreResult)).'","True","'.$antiFraudScoreResult->transactionId.'")');
+                    // 提交事务
+                    $db3->commit();
+                } catch (\Exception $e) {
+                    // 回滚事务
+                    $db3->rollback();
+                    $this->requestMsg='将欺诈分添加到数据库失败';
+                    $this->failPost();
+                    exit;
+                }
+                return json_encode($antiFraudScoreResult);
+            }else{
+                $this->requestMsg='查询欺诈分失败';
+                $this->failPost();
+                exit;
+            }
+        }
+    }
+
+    /**
+     * @param $midata 欺诈信息需要的参数
+     * @return string 欺诈信息
+     */
+    private function GenerateAntiFraudVerifyJsonString($midata){
+        //用身份证去查数据库，有记录返回，无记录去查芝麻
+        $db3 = Db::connect('database.db3');//链接欺诈分信息信用库
+        $antiFraudInfo=$db3->query('select * from cqs_zhima_antifraudverify_querydata where MemberIDCard = "'.$midata['CertNo'].'" order by id desc limit 1');
+        if($antiFraudInfo){//数据库有数据
+            //直接返回body
+            return $antiFraudInfo[0]['body'];
+        }else{//调用芝麻信用查欺诈信息系统
+            $antiFraudVerify=new ZhimaCreditAntifraudVerify();//建立查欺诈分信息实例
+            $antiFraudVerifyResult=$antiFraudVerify->zhimaQueryVerify($midata);
+            if($antiFraudVerifyResult->success){//查询成功
+                //记录到数据库中
+                $db3->startTrans();
+                try {
+                    $db3->execute('INSERT INTO cqs_zhima_antifraudverify_querydata (MemberIDCard ,PostData,RequestDateTime,Tag,bizNo,verifyCode,body ,Success,TransactionID) VALUES ("'.$midata['CertNo'].'","'.addslashes(json_encode($midata)).'","'.date('Y-m-d H:i:s').'",0,"'.$antiFraudVerifyResult->biz_no.'","'.addslashes(json_encode($antiFraudVerifyResult->verify_code)).'","'.addslashes(json_encode($antiFraudVerifyResult)).'","True","'.$antiFraudVerifyResult->transactionId.'")');
+                    // 提交事务
+                    $db3->commit();
+                } catch (\Exception $e) {
+                    // 回滚事务
+                    $db3->rollback();
+                    $this->requestMsg='将欺诈分信息添加到数据库失败';
+                    $this->failPost();
+                    exit;
+                }
+                return json_encode($antiFraudVerifyResult);
+            }else{
+                $this->requestMsg='查询欺诈分信息失败';
+                $this->failPost();
+                exit;
+            }
+        }
+    }
+
+    /**
+     * @param $midata 欺诈列表需要的参数
+     * @return string 欺诈列表信息
+     */
+    private function GenerateAntiFraudRiskListJsonString($midata){
+        //用身份证去查数据库，有记录返回，无记录去查芝麻
+        $db3 = Db::connect('database.db3');//链接欺诈列表信用库
+        $antiFraudListInfo=$db3->query('select * from cqs_zhima_antifraudrisklist_querydata where MemberIDCard = "'.$midata['CertNo'].'" order by id desc limit 1');
+        if($antiFraudListInfo){//数据库有数据
+            //直接返回body
+            return $antiFraudListInfo[0]['body'];
+        }else{//调用芝麻信用查欺诈信息系统
+            $antiFraudList=new ZhimaCreditAntifraudRiskList();//建立查欺诈列表信息实例
+            $antiFraudListResult=$antiFraudList->zhimaQueryList($midata);
+            if($antiFraudListResult->success){//查询成功
+                //记录到数据库中
+                $db3->startTrans();
+                try {
+                    $db3->execute('INSERT INTO cqs_zhima_antifraudrisklist_querydata (MemberIDCard ,PostData,RequestDateTime,Tag,bizNo,riskcode,body ,Success,TransactionID,hit) VALUES ("'.$midata['CertNo'].'","'.addslashes(json_encode($midata)).'","'.date('Y-m-d H:i:s').'",0,"'.$antiFraudListResult->biz_no.'","'.addslashes(json_encode($antiFraudListResult->risk_code)).'","'.addslashes(json_encode($antiFraudListResult)).'","True","'.$antiFraudListResult->transactionId.'","'.$antiFraudListResult->hit.'")');
+                    // 提交事务
+                    $db3->commit();
+                } catch (\Exception $e) {
+                    // 回滚事务
+                    $db3->rollback();
+                    $this->requestMsg='将欺诈分列表添加到数据库失败';
+                    $this->failPost();
+                    exit;
+                }
+                return json_encode($antiFraudListResult);
+            }else{
+                $this->requestMsg='查询欺诈分列表失败';
+                $this->failPost();
+                exit;
+            }
+        }
     }
 }
 

@@ -1,0 +1,2015 @@
+---------------------------------------------------------------
+[ 2017-08-16T11:21:34+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=321023199507252612&querydatalist=11111&XDEBUG_SESSION_START=13174
+[ sql ] [ DB ] CONNECT:[ UseTime:3.383789s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="321023199507252612" [ RunTime:1.207031s ]
+[ error ] [8]未定义数组下标: 0
+---------------------------------------------------------------
+[ 2017-08-16T11:22:22+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=321023199507252612&querydatalist=11111&XDEBUG_SESSION_START=13174
+[ sql ] [ DB ] CONNECT:[ UseTime:1.612305s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="321023199507252612" [ RunTime:0.937500s ]
+[ error ] [8]未定义数组下标: 0
+---------------------------------------------------------------
+[ 2017-08-16T11:23:23+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=321023199507252612&querydatalist=11111&XDEBUG_SESSION_START=13174
+[ sql ] [ DB ] CONNECT:[ UseTime:0.652344s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="321023199507252612" [ RunTime:0.476563s ]
+[ error ] [8]未定义数组下标: 0
+---------------------------------------------------------------
+[ 2017-08-16T11:23:33+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=350121199405016712&querydatalist=11111&XDEBUG_SESSION_START=16793
+[ sql ] [ DB ] CONNECT:[ UseTime:1.939453s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="350121199405016712" [ RunTime:0.333984s ]
+[ error ] [8]未定义数组下标: 0
+---------------------------------------------------------------
+[ 2017-08-16T11:26:17+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=14698
+[ sql ] [ DB ] CONNECT:[ UseTime:2.105469s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.238281s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:5.264648s ]
+---------------------------------------------------------------
+[ 2017-08-16T11:29:01+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=14698
+[ sql ] [ DB ] CONNECT:[ UseTime:0.100586s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.128906s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.333008s ]
+---------------------------------------------------------------
+[ 2017-08-16T11:45:34+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=14698
+[ sql ] [ DB ] CONNECT:[ UseTime:0.841797s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.208008s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.057617s ]
+[ error ] [8]未定义数组索引: Mac
+---------------------------------------------------------------
+[ 2017-08-16T11:46:22+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=14698
+[ sql ] [ DB ] CONNECT:[ UseTime:0.165039s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.111328s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.138672s ]
+---------------------------------------------------------------
+[ 2017-08-16T11:46:50+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=14698
+[ sql ] [ DB ] CONNECT:[ UseTime:4.152343s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:1.104492s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.302735s ]
+[ error ] [8]未定义数组索引: mac_addr
+---------------------------------------------------------------
+[ 2017-08-16T11:47:46+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=14698
+[ sql ] [ DB ] CONNECT:[ UseTime:5.740234s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:5.377929s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:2.572265s ]
+---------------------------------------------------------------
+[ 2017-08-16T13:53:36+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=14698
+[ sql ] [ DB ] CONNECT:[ UseTime:0.063477s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.033203s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.035156s ]
+---------------------------------------------------------------
+[ 2017-08-16T15:56:07+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=14698
+[ sql ] [ DB ] CONNECT:[ UseTime:0.084961s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.050781s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.062500s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.055664s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.038086s ]
+---------------------------------------------------------------
+[ 2017-08-16T16:00:12+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=14698
+[ sql ] [ DB ] CONNECT:[ UseTime:0.059570s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.033203s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.039062s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.059570s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.066407s ]
+---------------------------------------------------------------
+[ 2017-08-16T16:06:32+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=14698
+[ sql ] [ DB ] CONNECT:[ UseTime:3.383789s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.043945s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.041016s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:1.044922s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.033203s ]
+---------------------------------------------------------------
+[ 2017-08-16T16:08:10+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=14698
+[ sql ] [ DB ] CONNECT:[ UseTime:0.064453s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.063477s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.050781s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.062500s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.046875s ]
+[ error ] [8192]Non-static method think\db\Connection::startTrans() should not be called statically, assuming $this from incompatible context
+---------------------------------------------------------------
+[ 2017-08-16T16:10:12+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=14698
+[ sql ] [ DB ] CONNECT:[ UseTime:0.081055s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.117187s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.070313s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.061523s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.034180s ]
+---------------------------------------------------------------
+[ 2017-08-16T16:11:55+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=14698
+[ sql ] [ DB ] CONNECT:[ UseTime:0.094727s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.038086s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.041993s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.065430s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.036133s ]
+---------------------------------------------------------------
+[ 2017-08-16T16:13:36+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=14698
+[ sql ] [ DB ] CONNECT:[ UseTime:0.081055s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.065430s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.050781s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.150391s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.033203s ]
+---------------------------------------------------------------
+[ 2017-08-16T16:15:52+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=14698
+[ sql ] [ DB ] CONNECT:[ UseTime:0.084961s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.047852s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.041992s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.063477s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.046875s ]
+---------------------------------------------------------------
+[ 2017-08-16T16:17:13+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=14698
+[ sql ] [ DB ] CONNECT:[ UseTime:0.067383s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:1.941406s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.041015s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.058594s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.036133s ]
+---------------------------------------------------------------
+[ 2017-08-16T16:18:11+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=14698
+[ sql ] [ DB ] CONNECT:[ UseTime:0.063476s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.035157s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.040039s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:7.104492s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.030273s ]
+---------------------------------------------------------------
+[ 2017-08-16T16:20:39+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=14698
+[ sql ] [ DB ] CONNECT:[ UseTime:0.083984s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.066407s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.106445s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.129883s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.126953s ]
+---------------------------------------------------------------
+[ 2017-08-16T16:21:03+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=14698
+[ sql ] [ DB ] CONNECT:[ UseTime:0.159180s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.095703s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.105469s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.056640s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.054688s ]
+---------------------------------------------------------------
+[ 2017-08-16T16:22:00+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=14698
+[ sql ] [ DB ] CONNECT:[ UseTime:0.072266s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.115234s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:1.423828s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.364258s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.049805s ]
+---------------------------------------------------------------
+[ 2017-08-16T16:24:27+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=14698
+[ sql ] [ DB ] CONNECT:[ UseTime:0.126953s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.039063s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.035156s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.149414s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.131836s ]
+---------------------------------------------------------------
+[ 2017-08-16T16:26:21+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=14698
+[ sql ] [ DB ] CONNECT:[ UseTime:2.545899s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.161133s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.100586s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:1.486328s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.054688s ]
+---------------------------------------------------------------
+[ 2017-08-16T16:28:25+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=14698
+[ sql ] [ DB ] CONNECT:[ UseTime:1.069336s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.104493s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.057617s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.060547s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.048829s ]
+---------------------------------------------------------------
+[ 2017-08-16T16:33:50+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=14698
+[ sql ] [ DB ] CONNECT:[ UseTime:1.986328s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.764649s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.040039s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:1.473633s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.030274s ]
+---------------------------------------------------------------
+[ 2017-08-16T16:34:13+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=13425
+[ sql ] [ DB ] CONNECT:[ UseTime:0.059570s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:1.346679s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.050781s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.062500s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.091797s ]
+---------------------------------------------------------------
+[ 2017-08-16T16:36:05+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=13425
+[ sql ] [ DB ] CONNECT:[ UseTime:0.073242s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.045899s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.057617s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.124023s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.059570s ]
+---------------------------------------------------------------
+[ 2017-08-16T16:36:50+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=13425
+[ sql ] [ DB ] CONNECT:[ UseTime:0.108399s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:3.267578s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.074218s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.065430s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.032227s ]
+---------------------------------------------------------------
+[ 2017-08-16T16:43:19+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=13425
+[ sql ] [ DB ] CONNECT:[ UseTime:0.052734s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.029296s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.033203s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.050782s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.034179s ]
+---------------------------------------------------------------
+[ 2017-08-16T16:43:49+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=13425
+[ sql ] [ DB ] CONNECT:[ UseTime:0.050781s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.052734s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.060547s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:3.110352s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.083985s ]
+---------------------------------------------------------------
+[ 2017-08-16T16:45:45+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=13425
+[ sql ] [ DB ] CONNECT:[ UseTime:0.055664s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.034180s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:1.353516s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.062500s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.051758s ]
+---------------------------------------------------------------
+[ 2017-08-16T16:46:41+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=13425
+[ sql ] [ DB ] CONNECT:[ UseTime:0.066406s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.030273s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.036133s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.062500s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.037109s ]
+---------------------------------------------------------------
+[ 2017-08-16T16:47:01+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=13425
+[ sql ] [ DB ] CONNECT:[ UseTime:0.056641s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.034180s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.040040s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.045898s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.031250s ]
+[ sql ] [ SQL ] INSERT INTO cqs_zhima_AntiFraudScore_QueryData (MemberIDCard ,PostData,RequestDateTime,Tag,bizNo,Score,body ,Success,TransactionID) VALUES ("612401198312120010",0,"2017-08-16 16:46:47",0,"ZM201708163000000262600592417127","74",0,"1","XCQB1502873203201708161646435999") [ RunTime:0.035156s ]
+---------------------------------------------------------------
+[ 2017-08-16T16:47:41+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=13425
+[ sql ] [ DB ] CONNECT:[ UseTime:0.066406s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.040039s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.038086s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.059571s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.035157s ]
+---------------------------------------------------------------
+[ 2017-08-16T16:52:21+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=13425
+[ sql ] [ DB ] CONNECT:[ UseTime:0.068360s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.037109s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.049804s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.055664s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.051757s ]
+[ sql ] [ SQL ] INSERT INTO cqs_zhima_AntiFraudScore_QueryData (MemberIDCard ,PostData,RequestDateTime,Tag,bizNo,Score,body ,Success,TransactionID) VALUES ("612401198312120010",0,"2017-08-16 16:47:57",0,"ZM201708163000000494900592941347","74",0,"1","XCQB1502873273201708161647531973") [ RunTime:0.078125s ]
+---------------------------------------------------------------
+[ 2017-08-16T16:53:06+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=13425
+[ sql ] [ DB ] CONNECT:[ UseTime:1.178711s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:1.035156s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.041992s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.057617s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.058594s ]
+[ sql ] [ SQL ] INSERT INTO cqs_zhima_AntiFraudScore_QueryData (MemberIDCard ,PostData,RequestDateTime,Tag,bizNo,Score,body ,Success,TransactionID) VALUES ("612401198312120010",0,"2017-08-16 16:52:46",0,"ZM201708163000000757500593283549","74",0,"true","XCQB1502873555201708161652352388") [ RunTime:0.050781s ]
+---------------------------------------------------------------
+[ 2017-08-16T16:54:40+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=13425
+[ sql ] [ DB ] CONNECT:[ UseTime:0.054688s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.035156s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.037109s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.053711s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.040039s ]
+---------------------------------------------------------------
+[ 2017-08-16T16:55:45+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=13425
+[ sql ] [ DB ] CONNECT:[ UseTime:0.067382s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.048828s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.039063s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.060547s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.040039s ]
+---------------------------------------------------------------
+[ 2017-08-16T16:58:12+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=13425
+[ sql ] [ DB ] CONNECT:[ UseTime:2.061523s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.034179s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.036133s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.048828s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.032226s ]
+---------------------------------------------------------------
+[ 2017-08-16T17:01:39+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=13425
+[ sql ] [ DB ] CONNECT:[ UseTime:0.291015s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.033203s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.038086s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.052734s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.041992s ]
+---------------------------------------------------------------
+[ 2017-08-16T17:01:49+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=13425
+[ sql ] [ DB ] CONNECT:[ UseTime:0.076172s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.066406s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.052735s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.047851s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.030274s ]
+---------------------------------------------------------------
+[ 2017-08-16T17:06:42+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=13425
+[ sql ] [ DB ] CONNECT:[ UseTime:0.055664s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.033204s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.036133s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.045899s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.050781s ]
+---------------------------------------------------------------
+[ 2017-08-16T17:06:55+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=13425
+[ sql ] [ DB ] CONNECT:[ UseTime:0.075195s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.047851s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.054687s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.058594s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.034179s ]
+---------------------------------------------------------------
+[ 2017-08-16T17:07:14+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=12889
+[ sql ] [ DB ] CONNECT:[ UseTime:0.188477s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.052734s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.097656s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.064453s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.057617s ]
+---------------------------------------------------------------
+[ 2017-08-16T17:08:53+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=12889
+[ sql ] [ DB ] CONNECT:[ UseTime:0.057618s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.030273s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.041015s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:3.065430s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.051758s ]
+[ sql ] [ SQL ] INSERT INTO cqs_zhima_AntiFraudScore_QueryData (MemberIDCard ,PostData,RequestDateTime,Tag,bizNo,Score,body ,Success,TransactionID) VALUES ("612401198312120010",0,"2017-08-16 17:07:45",0,"ZM201708163000000222200592544006","74","{\"success\":true,\"biz_no\":\"ZM201708163000000222200592544006\",\"score\":74,\"transactionId\":\"XCQB1502874459201708161707394001\"}","True","XCQB1502874459201708161707394001") [ RunTime:0.043946s ]
+---------------------------------------------------------------
+[ 2017-08-16T17:09:58+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=12889
+[ sql ] [ DB ] CONNECT:[ UseTime:0.063476s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.039062s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.042969s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.056641s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.043945s ]
+[ sql ] [ SQL ] INSERT INTO cqs_zhima_AntiFraudScore_QueryData (MemberIDCard ,PostData,RequestDateTime,Tag,bizNo,Score,body ,Success,TransactionID) VALUES ("612401198312120010","{\"CertType\":\"IDENTITY_CARD\",\"CertNo\":\"612401198312120010\",\"Name\":\"\\u6768\\u5b97\\u6ce2\",\"Mobile\":\"18909150499\",\"Address\":\"\\u9655\\u897f \\u5b89\\u5eb7 \\u6c49\\u6ee8\\u533a\\u6148\\u5e7c\\u5df715\\u53f71\\u53f7\\u697c2\\u5355\\u5143501\\u5ba4\",\"Mac\":null,\"Wifimac\":\"N\\/A\",\"BankCard\":\"6215592607000336069\",\"Email\":\"N\\/A\",\"Ip\":\"222.91.242.141\",\"Imei\":\"864454032150850\"}","2017-08-16 17:09:58",0,"ZM201708163000000101000590927913","74","{\"success\":true,\"biz_no\":\"ZM201708163000000101000590927913\",\"score\":74,\"transactionId\":\"XCQB1502874595201708161709551092\"}","True","XCQB1502874595201708161709551092") [ RunTime:0.091797s ]
+---------------------------------------------------------------
+[ 2017-08-16T17:33:00+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=12889
+[ sql ] [ DB ] CONNECT:[ UseTime:0.053711s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.037109s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.041016s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.112304s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.056641s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudverify_querydata where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.041016s ]
+---------------------------------------------------------------
+[ 2017-08-16T17:33:55+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=12889
+[ sql ] [ DB ] CONNECT:[ UseTime:0.196289s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.049805s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.042969s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.054687s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.035156s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudverify_querydata where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.063477s ]
+---------------------------------------------------------------
+[ 2017-08-16T17:34:15+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=12889
+[ sql ] [ DB ] CONNECT:[ UseTime:0.097656s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.053711s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.063477s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.056641s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.077148s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudverify_querydata where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.065430s ]
+---------------------------------------------------------------
+[ 2017-08-16T17:35:09+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=12889
+[ sql ] [ DB ] CONNECT:[ UseTime:0.503906s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.581055s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:2.218750s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.831055s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:3.165039s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudverify_querydata where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.573242s ]
+---------------------------------------------------------------
+[ 2017-08-16T17:35:56+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=12889
+[ sql ] [ DB ] CONNECT:[ UseTime:0.083984s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.061524s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.056640s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.504882s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:1.809570s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudverify_querydata where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.054687s ]
+---------------------------------------------------------------
+[ 2017-08-16T17:37:08+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=12889
+[ sql ] [ DB ] CONNECT:[ UseTime:0.069336s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.040039s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.061523s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.503906s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.073243s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudverify_querydata where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.041992s ]
+[ sql ] [ SQL ] INSERT INTO cqs_zhima_antifraudverify_querydata (MemberIDCard ,PostData,RequestDateTime,Tag,bizNo,verifyCode,body ,Success,TransactionID) VALUES ("612401198312120010","{\"CertType\":\"IDENTITY_CARD\",\"CertNo\":\"612401198312120010\",\"Name\":\"\\u6768\\u5b97\\u6ce2\",\"Mobile\":\"18909150499\",\"Address\":\"\\u9655\\u897f \\u5b89\\u5eb7 \\u6c49\\u6ee8\\u533a\\u6148\\u5e7c\\u5df715\\u53f71\\u53f7\\u697c2\\u5355\\u5143501\\u5ba4\",\"Mac\":null,\"Wifimac\":\"N\\/A\",\"BankCard\":\"6215592607000336069\",\"Email\":\"N\\/A\",\"Ip\":\"222.91.242.141\",\"Imei\":\"864454032150850\"}","2017-08-16 17:37:00",0,"ZM201708163000000878700594793092","[\"V_CN_NM_MA\",\"V_PH_CN_MA_UL90D\",\"V_EM_CN_UK\",\"V_AD_CN_MA_UL180D\",\"V_AD_CN_MA_HOME\",\"V_BC_CN_MA_UM360D\",\"V_IP_CN_UK\",\"V_IM_CN_MA\"]","{\"success\":true,\"biz_no\":\"ZM201708163000000878700594793092\",\"verify_code\":[\"V_CN_NM_MA\",\"V_PH_CN_MA_UL90D\",\"V_EM_CN_UK\",\"V_AD_CN_MA_UL180D\",\"V_AD_CN_MA_HOME\",\"V_BC_CN_MA_UM360D\",\"V_IP_CN_UK\",\"V_IM_CN_MA\"],\"transactionId\":\"XCQB1502876213201708161736537720\"}","True","XCQB1502876213201708161736537720") [ RunTime:0.037110s ]
+---------------------------------------------------------------
+[ 2017-08-16T17:53:45+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=12889
+[ sql ] [ DB ] CONNECT:[ UseTime:0.089844s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.047852s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.035157s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.056641s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.033203s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudverify_querydata where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.045899s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudrisklist_querydata where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.035156s ]
+---------------------------------------------------------------
+[ 2017-08-16T17:54:07+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=12889
+[ sql ] [ DB ] CONNECT:[ UseTime:0.061524s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.033203s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.104492s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.055664s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.071289s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudverify_querydata where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.036133s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudrisklist_querydata where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.035156s ]
+---------------------------------------------------------------
+[ 2017-08-16T17:54:31+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=612401198312120010&querydatalist=11111&XDEBUG_SESSION_START=12889
+[ sql ] [ DB ] CONNECT:[ UseTime:0.060546s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="612401198312120010" [ RunTime:0.030273s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "2993338" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "2993338" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "2993338" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "2993338" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "2993338" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "2993338" [ RunTime:0.040039s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.060547s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.041015s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudverify_querydata where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.042969s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudrisklist_querydata where MemberIDCard = "612401198312120010" order by id desc limit 1 [ RunTime:0.031250s ]
+---------------------------------------------------------------
+[ 2017-08-16T17:59:28+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=411381198908160302&querydatalist=11111&XDEBUG_SESSION_START=17904
+[ sql ] [ DB ] CONNECT:[ UseTime:0.069336s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="411381198908160302" [ RunTime:0.030274s ]
+---------------------------------------------------------------
+[ 2017-08-16T18:02:15+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=411381198908160302&querydatalist=11111&XDEBUG_SESSION_START=17904
+[ sql ] [ DB ] CONNECT:[ UseTime:0.068360s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="411381198908160302" [ RunTime:0.029297s ]
+---------------------------------------------------------------
+[ 2017-08-16T18:02:42+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=310115198211220636&querydatalist=11111&XDEBUG_SESSION_START=10173
+[ sql ] [ DB ] CONNECT:[ UseTime:0.057617s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="310115198211220636" [ RunTime:1.566406s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "3170405" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "3170405" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "3170405" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "3170405" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "3170405" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "3170405" [ RunTime:0.038086s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.069336s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "310115198211220636" order by id desc limit 1 [ RunTime:0.033203s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudverify_querydata where MemberIDCard = "310115198211220636" order by id desc limit 1 [ RunTime:0.034180s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudrisklist_querydata where MemberIDCard = "310115198211220636" order by id desc limit 1 [ RunTime:0.036132s ]
+---------------------------------------------------------------
+[ 2017-08-16T18:05:03+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=610324199105070534&querydatalist=11111&XDEBUG_SESSION_START=10337
+[ sql ] [ DB ] CONNECT:[ UseTime:0.059571s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="610324199105070534" [ RunTime:0.035156s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "3170409" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "3170409" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "3170409" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "3170409" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "3170409" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "3170409" [ RunTime:0.036133s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.047852s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.031250s ]
+[ sql ] [ SQL ] INSERT INTO cqs_zhima_AntiFraudScore_QueryData (MemberIDCard ,PostData,RequestDateTime,Tag,bizNo,Score,body ,Success,TransactionID) VALUES ("610324199105070534","{\"CertType\":\"IDENTITY_CARD\",\"CertNo\":\"610324199105070534\",\"Name\":\"\\u5362\\u6587\\u6d9b\",\"Mobile\":\"17612141290\",\"Address\":\"\\u4e0a\\u6d77 \\u95f8\\u5317\\u533a\\u5929\\u76ee\\u897f\\u8def218\\u53f7\",\"Mac\":null,\"Wifimac\":\"N\\/A\",\"BankCard\":\"6227002020930238612\",\"Email\":\"N\\/A\",\"Ip\":\"140.206.89.250\",\"Imei\":\"869782021818920\"}","2017-08-16 18:05:02",0,"ZM201708163000000636300594233981","45","{\"success\":true,\"biz_no\":\"ZM201708163000000636300594233981\",\"score\":45,\"transactionId\":\"XCQB1502877901201708161805015538\"}","True","XCQB1502877901201708161805015538") [ RunTime:0.031250s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudverify_querydata where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.034179s ]
+[ sql ] [ SQL ] INSERT INTO cqs_zhima_antifraudverify_querydata (MemberIDCard ,PostData,RequestDateTime,Tag,bizNo,verifyCode,body ,Success,TransactionID) VALUES ("610324199105070534","{\"CertType\":\"IDENTITY_CARD\",\"CertNo\":\"610324199105070534\",\"Name\":\"\\u5362\\u6587\\u6d9b\",\"Mobile\":\"17612141290\",\"Address\":\"\\u4e0a\\u6d77 \\u95f8\\u5317\\u533a\\u5929\\u76ee\\u897f\\u8def218\\u53f7\",\"Mac\":null,\"Wifimac\":\"N\\/A\",\"BankCard\":\"6227002020930238612\",\"Email\":\"N\\/A\",\"Ip\":\"140.206.89.250\",\"Imei\":\"869782021818920\"}","2017-08-16 18:05:03",0,"ZM201708163000000262600592887031","[\"V_CN_NM_MA\",\"V_PH_CN_MA_UL90D\",\"V_EM_CN_UK\",\"V_AD_CN_MA_UM360D\",\"V_AD_CN_MA_WORK\",\"V_BC_CN_UK\",\"V_IP_CN_UK\",\"V_IM_CN_MA\"]","{\"success\":true,\"biz_no\":\"ZM201708163000000262600592887031\",\"verify_code\":[\"V_CN_NM_MA\",\"V_PH_CN_MA_UL90D\",\"V_EM_CN_UK\",\"V_AD_CN_MA_UM360D\",\"V_AD_CN_MA_WORK\",\"V_BC_CN_UK\",\"V_IP_CN_UK\",\"V_IM_CN_MA\"],\"transactionId\":\"XCQB1502877902201708161805027016\"}","True","XCQB1502877902201708161805027016") [ RunTime:0.032227s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudrisklist_querydata where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.033203s ]
+---------------------------------------------------------------
+[ 2017-08-16T18:06:09+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=610324199105070534&querydatalist=11111&XDEBUG_SESSION_START=10337
+[ sql ] [ DB ] CONNECT:[ UseTime:0.055664s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="610324199105070534" [ RunTime:0.388672s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "3170409" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "3170409" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "3170409" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "3170409" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "3170409" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "3170409" [ RunTime:0.037110s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.098633s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.037109s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudverify_querydata where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.031250s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudrisklist_querydata where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.035156s ]
+[ sql ] [ SQL ] INSERT INTO cqs_zhima_antifraudrisklist_querydata (MemberIDCard ,PostData,RequestDateTime,Tag,bizNo,riskcode,body ,Success,TransactionID,hit) VALUES ("610324199105070534","{\"CertType\":\"IDENTITY_CARD\",\"CertNo\":\"610324199105070534\",\"Name\":\"\\u5362\\u6587\\u6d9b\",\"Mobile\":\"17612141290\",\"Address\":\"\\u4e0a\\u6d77 \\u95f8\\u5317\\u533a\\u5929\\u76ee\\u897f\\u8def218\\u53f7\",\"Mac\":null,\"Wifimac\":\"N\\/A\",\"BankCard\":\"6227002020930238612\",\"Email\":\"N\\/A\",\"Ip\":\"140.206.89.250\",\"Imei\":\"869782021818920\"}","2017-08-16 18:06:09",0,"ZM201708163000000292900592872727","[\"R_IP_007\"]","{\"success\":true,\"biz_no\":\"ZM201708163000000292900592872727\",\"hit\":\"yes\",\"risk_code\":[\"R_IP_007\"],\"transactionId\":\"XCQB1502877965201708161806051379\"}","True","XCQB1502877965201708161806051379","yes") [ RunTime:0.028321s ]
+---------------------------------------------------------------
+[ 2017-08-16T18:06:19+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=610324199105070534&querydatalist=11111&XDEBUG_SESSION_START=10337
+[ sql ] [ DB ] CONNECT:[ UseTime:0.059570s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="610324199105070534" [ RunTime:0.034180s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "3170409" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "3170409" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "3170409" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "3170409" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "3170409" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "3170409" [ RunTime:0.034180s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.048828s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.033203s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudverify_querydata where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.031250s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudrisklist_querydata where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.034180s ]
+---------------------------------------------------------------
+[ 2017-08-16T18:06:29+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=610324199105070534&querydatalist=11111&XDEBUG_SESSION_START=10337
+[ sql ] [ DB ] CONNECT:[ UseTime:3.061523s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="610324199105070534" [ RunTime:0.037109s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "3170409" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "3170409" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "3170409" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "3170409" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "3170409" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "3170409" [ RunTime:0.041016s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.069336s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.031250s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudverify_querydata where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.056641s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudrisklist_querydata where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.032227s ]
+---------------------------------------------------------------
+[ 2017-08-16T18:08:01+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=610324199105070534&querydatalist=11111&XDEBUG_SESSION_START=10337
+[ sql ] [ DB ] CONNECT:[ UseTime:0.062500s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="610324199105070534" [ RunTime:0.031250s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "3170409" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "3170409" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "3170409" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "3170409" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "3170409" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "3170409" [ RunTime:0.034179s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.062500s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.040039s ]
+[ sql ] [ SQL ] INSERT INTO cqs_zhima_AntiFraudScore_QueryData (MemberIDCard ,PostData,RequestDateTime,Tag,bizNo,Score,body ,Success,TransactionID) VALUES ("610324199105070534","{\"CertType\":\"IDENTITY_CARD\",\"CertNo\":\"610324199105070534\",\"Name\":\"\\u5362\\u6587\\u6d9b\",\"Mobile\":\"17612141290\",\"Address\":\"\\u4e0a\\u6d77 \\u95f8\\u5317\\u533a\\u5929\\u76ee\\u897f\\u8def218\\u53f7\",\"Mac\":null,\"Wifimac\":\"N\\/A\",\"BankCard\":\"6227002020930238612\",\"Email\":\"N\\/A\",\"Ip\":\"140.206.89.250\",\"Imei\":\"869782021818920\"}","2017-08-16 18:07:42",0,"ZM201708163000000898900595012690","45","{\"success\":true,\"biz_no\":\"ZM201708163000000898900595012690\",\"score\":45,\"transactionId\":\"XCQB1502878060201708161807403134\"}","True","XCQB1502878060201708161807403134") [ RunTime:0.039062s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudverify_querydata where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.043946s ]
+[ sql ] [ SQL ] INSERT INTO cqs_zhima_antifraudverify_querydata (MemberIDCard ,PostData,RequestDateTime,Tag,bizNo,verifyCode,body ,Success,TransactionID) VALUES ("610324199105070534","{\"CertType\":\"IDENTITY_CARD\",\"CertNo\":\"610324199105070534\",\"Name\":\"\\u5362\\u6587\\u6d9b\",\"Mobile\":\"17612141290\",\"Address\":\"\\u4e0a\\u6d77 \\u95f8\\u5317\\u533a\\u5929\\u76ee\\u897f\\u8def218\\u53f7\",\"Mac\":null,\"Wifimac\":\"N\\/A\",\"BankCard\":\"6227002020930238612\",\"Email\":\"N\\/A\",\"Ip\":\"140.206.89.250\",\"Imei\":\"869782021818920\"}","2017-08-16 18:07:42",0,"ZM201708163000000777700593728073","[\"V_CN_NM_MA\",\"V_PH_CN_MA_UL90D\",\"V_EM_CN_UK\",\"V_AD_CN_MA_UM360D\",\"V_AD_CN_MA_WORK\",\"V_BC_CN_UK\",\"V_IP_CN_UK\",\"V_IM_CN_MA\"]","{\"success\":true,\"biz_no\":\"ZM201708163000000777700593728073\",\"verify_code\":[\"V_CN_NM_MA\",\"V_PH_CN_MA_UL90D\",\"V_EM_CN_UK\",\"V_AD_CN_MA_UM360D\",\"V_AD_CN_MA_WORK\",\"V_BC_CN_UK\",\"V_IP_CN_UK\",\"V_IM_CN_MA\"],\"transactionId\":\"XCQB1502878062201708161807421284\"}","True","XCQB1502878062201708161807421284") [ RunTime:0.040039s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudrisklist_querydata where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:1.126953s ]
+[ sql ] [ SQL ] INSERT INTO cqs_zhima_antifraudrisklist_querydata (MemberIDCard ,PostData,RequestDateTime,Tag,bizNo,riskcode,body ,Success,TransactionID,hit) VALUES ("610324199105070534","{\"CertType\":\"IDENTITY_CARD\",\"CertNo\":\"610324199105070534\",\"Name\":\"\\u5362\\u6587\\u6d9b\",\"Mobile\":\"17612141290\",\"Address\":\"\\u4e0a\\u6d77 \\u95f8\\u5317\\u533a\\u5929\\u76ee\\u897f\\u8def218\\u53f7\",\"Mac\":null,\"Wifimac\":\"N\\/A\",\"BankCard\":\"6227002020930238612\",\"Email\":\"N\\/A\",\"Ip\":\"140.206.89.250\",\"Imei\":\"869782021818920\"}","2017-08-16 18:07:56",0,"ZM201708163000000525200595605962","[\"R_IP_007\"]","{\"success\":true,\"biz_no\":\"ZM201708163000000525200595605962\",\"hit\":\"yes\",\"risk_code\":[\"R_IP_007\"],\"transactionId\":\"XCQB1502878067201708161807478682\"}","True","XCQB1502878067201708161807478682","yes") [ RunTime:0.042969s ]
+---------------------------------------------------------------
+[ 2017-08-16T18:11:24+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=610324199105070534&querydatalist=11111&XDEBUG_SESSION_START=10337
+[ sql ] [ DB ] CONNECT:[ UseTime:0.053711s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="610324199105070534" [ RunTime:0.030273s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "3170409" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "3170409" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "3170409" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "3170409" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "3170409" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "3170409" [ RunTime:0.032226s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.049804s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.034180s ]
+[ sql ] [ SQL ] INSERT INTO cqs_zhima_AntiFraudScore_QueryData (MemberIDCard ,PostData,RequestDateTime,Tag,bizNo,Score,body ,Success,TransactionID) VALUES ("610324199105070534","{\"CertType\":\"IDENTITY_CARD\",\"CertNo\":\"610324199105070534\",\"Name\":\"\\u5362\\u6587\\u6d9b\",\"Mobile\":\"17612141290\",\"Address\":\"\\u4e0a\\u6d77 \\u95f8\\u5317\\u533a\\u5929\\u76ee\\u897f\\u8def218\\u53f7\",\"Mac\":null,\"Wifimac\":\"N\\/A\",\"BankCard\":\"6227002020930238612\",\"Email\":\"N\\/A\",\"Ip\":\"140.206.89.250\",\"Imei\":\"869782021818920\"}","2017-08-16 18:10:38",0,"ZM201708163000000171700591331427","45","{\"success\":true,\"biz_no\":\"ZM201708163000000171700591331427\",\"score\":45,\"transactionId\":\"XCQB1502878238201708161810388731\"}","True","XCQB1502878238201708161810388731") [ RunTime:0.037109s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudverify_querydata where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.037110s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudrisklist_querydata where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.048829s ]
+[ sql ] [ SQL ] INSERT INTO cqs_zhima_antifraudrisklist_querydata (MemberIDCard ,PostData,RequestDateTime,Tag,bizNo,riskcode,body ,Success,TransactionID,hit) VALUES ("610324199105070534","{\"CertType\":\"IDENTITY_CARD\",\"CertNo\":\"610324199105070534\",\"Name\":\"\\u5362\\u6587\\u6d9b\",\"Mobile\":\"17612141290\",\"Address\":\"\\u4e0a\\u6d77 \\u95f8\\u5317\\u533a\\u5929\\u76ee\\u897f\\u8def218\\u53f7\",\"Mac\":null,\"Wifimac\":\"N\\/A\",\"BankCard\":\"6227002020930238612\",\"Email\":\"N\\/A\",\"Ip\":\"140.206.89.250\",\"Imei\":\"869782021818920\"}","2017-08-16 18:11:03",0,"ZM201708163000000757500593740651","[\"R_IP_007\"]","{\"success\":true,\"biz_no\":\"ZM201708163000000757500593740651\",\"hit\":\"yes\",\"risk_code\":[\"R_IP_007\"],\"transactionId\":\"XCQB1502878248201708161810486997\"}","True","XCQB1502878248201708161810486997","yes") [ RunTime:0.040039s ]
+---------------------------------------------------------------
+[ 2017-08-16T18:14:52+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=610324199105070534&querydatalist=11111&XDEBUG_SESSION_START=10337
+[ sql ] [ DB ] CONNECT:[ UseTime:0.056641s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="610324199105070534" [ RunTime:0.035156s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "3170409" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "3170409" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "3170409" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "3170409" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "3170409" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "3170409" [ RunTime:0.039063s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.075195s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.044922s ]
+[ sql ] [ SQL ] INSERT INTO cqs_zhima_AntiFraudScore_QueryData (MemberIDCard ,PostData,RequestDateTime,Tag,bizNo,Score,body ,Success,TransactionID) VALUES ("610324199105070534","{\"CertType\":\"IDENTITY_CARD\",\"CertNo\":\"610324199105070534\",\"Name\":\"\\u5362\\u6587\\u6d9b\",\"Mobile\":\"17612141290\",\"Address\":\"\\u4e0a\\u6d77 \\u95f8\\u5317\\u533a\\u5929\\u76ee\\u897f\\u8def218\\u53f7\",\"Mac\":null,\"Wifimac\":\"N\\/A\",\"BankCard\":\"6227002020930238612\",\"Email\":\"N\\/A\",\"Ip\":\"140.206.89.250\",\"Imei\":\"869782021818920\"}","2017-08-16 18:14:50",0,"ZM201708163000000020200591245991","45","{\"success\":true,\"biz_no\":\"ZM201708163000000020200591245991\",\"score\":45,\"transactionId\":\"XCQB1502878489201708161814492736\"}","True","XCQB1502878489201708161814492736") [ RunTime:0.040039s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudverify_querydata where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.050782s ]
+[ sql ] [ SQL ] INSERT INTO cqs_zhima_antifraudverify_querydata (MemberIDCard ,PostData,RequestDateTime,Tag,bizNo,verifyCode,body ,Success,TransactionID) VALUES ("610324199105070534","{\"CertType\":\"IDENTITY_CARD\",\"CertNo\":\"610324199105070534\",\"Name\":\"\\u5362\\u6587\\u6d9b\",\"Mobile\":\"17612141290\",\"Address\":\"\\u4e0a\\u6d77 \\u95f8\\u5317\\u533a\\u5929\\u76ee\\u897f\\u8def218\\u53f7\",\"Mac\":null,\"Wifimac\":\"N\\/A\",\"BankCard\":\"6227002020930238612\",\"Email\":\"N\\/A\",\"Ip\":\"140.206.89.250\",\"Imei\":\"869782021818920\"}","2017-08-16 18:14:51",0,"ZM201708163000000565600595673657","[\"V_CN_NM_MA\",\"V_PH_CN_MA_UL90D\",\"V_EM_CN_UK\",\"V_AD_CN_MA_UM360D\",\"V_AD_CN_MA_WORK\",\"V_BC_CN_UK\",\"V_IP_CN_UK\",\"V_IM_CN_MA\"]","{\"success\":true,\"biz_no\":\"ZM201708163000000565600595673657\",\"verify_code\":[\"V_CN_NM_MA\",\"V_PH_CN_MA_UL90D\",\"V_EM_CN_UK\",\"V_AD_CN_MA_UM360D\",\"V_AD_CN_MA_WORK\",\"V_BC_CN_UK\",\"V_IP_CN_UK\",\"V_IM_CN_MA\"],\"transactionId\":\"XCQB1502878490201708161814504185\"}","True","XCQB1502878490201708161814504185") [ RunTime:0.040039s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudrisklist_querydata where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.043945s ]
+[ sql ] [ SQL ] INSERT INTO cqs_zhima_antifraudrisklist_querydata (MemberIDCard ,PostData,RequestDateTime,Tag,bizNo,riskcode,body ,Success,TransactionID,hit) VALUES ("610324199105070534","{\"CertType\":\"IDENTITY_CARD\",\"CertNo\":\"610324199105070534\",\"Name\":\"\\u5362\\u6587\\u6d9b\",\"Mobile\":\"17612141290\",\"Address\":\"\\u4e0a\\u6d77 \\u95f8\\u5317\\u533a\\u5929\\u76ee\\u897f\\u8def218\\u53f7\",\"Mac\":null,\"Wifimac\":\"N\\/A\",\"BankCard\":\"6227002020930238612\",\"Email\":\"N\\/A\",\"Ip\":\"140.206.89.250\",\"Imei\":\"869782021818920\"}","2017-08-16 18:14:52",0,"ZM201708163000000090900591241732","[\"R_IP_007\"]","{\"success\":true,\"biz_no\":\"ZM201708163000000090900591241732\",\"hit\":\"yes\",\"risk_code\":[\"R_IP_007\"],\"transactionId\":\"XCQB1502878491201708161814513721\"}","True","XCQB1502878491201708161814513721","yes") [ RunTime:0.041016s ]
+---------------------------------------------------------------
+[ 2017-08-16T18:15:42+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=610324199105070534&querydatalist=11111&XDEBUG_SESSION_START=10337
+[ sql ] [ DB ] CONNECT:[ UseTime:0.068359s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="610324199105070534" [ RunTime:0.030274s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "3170409" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "3170409" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "3170409" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "3170409" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "3170409" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "3170409" [ RunTime:0.036133s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.062500s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.044921s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudverify_querydata where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.040039s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudrisklist_querydata where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.095703s ]
+---------------------------------------------------------------
+[ 2017-08-16T18:23:38+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=610324199105070534&querydatalist=11111&XDEBUG_SESSION_START=10337
+[ sql ] [ DB ] CONNECT:[ UseTime:0.056640s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="610324199105070534" [ RunTime:0.034180s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "3170409" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "3170409" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "3170409" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "3170409" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "3170409" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "3170409" [ RunTime:0.047852s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.053711s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.039063s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudverify_querydata where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.036133s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudrisklist_querydata where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.034180s ]
+---------------------------------------------------------------
+[ 2017-08-16T18:23:48+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=610324199105070534&querydatalist=11111&XDEBUG_SESSION_START=10337
+[ sql ] [ DB ] CONNECT:[ UseTime:0.378906s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="610324199105070534" [ RunTime:0.042968s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "3170409" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "3170409" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "3170409" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "3170409" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "3170409" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "3170409" [ RunTime:0.035157s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.079101s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.047852s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudverify_querydata where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.051758s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudrisklist_querydata where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.047852s ]
+---------------------------------------------------------------
+[ 2017-08-16T18:24:29+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=610324199105070534&querydatalist=11111&XDEBUG_SESSION_START=10337
+[ sql ] [ DB ] CONNECT:[ UseTime:0.054688s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="610324199105070534" [ RunTime:0.031250s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "3170409" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "3170409" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "3170409" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "3170409" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "3170409" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "3170409" [ RunTime:0.040039s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.053711s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.036132s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudverify_querydata where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.034180s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudrisklist_querydata where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.041015s ]
+---------------------------------------------------------------
+[ 2017-08-16T18:24:36+08:00 ] 127.0.0.1 127.0.0.1 GET /zhimaCreditQueryByIDCard?idcard=610324199105070534&querydatalist=11111&XDEBUG_SESSION_START=10337
+[ sql ] [ DB ] CONNECT:[ UseTime:0.065430s ] mysql:dbname=xiaocong;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select mi.uid , m.user_name , mi.idcard ,mi.address ,mi.real_name from lzh_member_info mi inner join lzh_members m on mi.uid = m.id where mi.idcard="610324199105070534" [ RunTime:0.054688s ]
+[ sql ] [ SQL ] select m.id , t1.mac_addr , t2.deviceid , t2.ip , t3.dev ,t4.address , t5.bank_num
+                        from lzh_members m
+                        left join 
+                        (
+                            select uid , mac_addr from (select * from lzh_member_info_ext where uid = "3170409" ) t order by id desc limit 1
+                        ) t1 on m.id = t1.uid
+                        left join
+                        (
+                            select uid , deviceid, ip from ( select *  from lzh_member_localtion where uid = "3170409" ) t order by id desc limit 1
+                        ) t2 on m.id = t2.uid
+                        left join
+                        (
+                            select uid ,dev  from  (select * from lzh_member_tongxunlu where uid = "3170409" ) t  order by t.id desc limit 1
+                        ) t3 on m.id = t3.uid
+                        left join
+                        (
+                            select uid , address  from  (select * from lzh_member_info where uid =  "3170409" ) t   limit 1
+                        ) t4 on m.id = t4.uid
+                        left join
+                        (
+                            select uid , bank_num  from  (select * from lzh_member_banks where uid =  "3170409" ) t   limit 1
+                        ) t5 on m.id = t5.uid
+                        where m.id = "3170409" [ RunTime:0.046875s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.057617s ] mysql:dbname=miren_creditinfo;host=rm-bp13u7x13557nse9zo.mysql.rds.aliyuncs.com;port=3306;charset=utf8
+[ sql ] [ SQL ] select * from cqs_zhima_AntiFraudScore_QueryData where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.041993s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudverify_querydata where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.054687s ]
+[ sql ] [ SQL ] select * from cqs_zhima_antifraudrisklist_querydata where MemberIDCard = "610324199105070534" order by id desc limit 1 [ RunTime:0.055664s ]
