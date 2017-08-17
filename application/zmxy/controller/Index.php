@@ -10,15 +10,15 @@ use think\Controller;
 use think\Request;
 use think\Db;
 include ZMXY_PATH.'Logger.php';
-include 'ZmxyCustomerCertificationInitialize.php';
-include 'ZhimaCustomerCertificationCertify.php';
-include 'ZhimaAuthInfoAuthorize.php';
-include 'ZmxyAuthRetrun.php';
-include 'ZhimaCreditWatchlistiiGet.php';
-include 'ZhimaCreditScoreGet.php';
-include 'ZhimaCreditAntifraudScoreGet.php';
-include 'ZhimaCreditAntifraudVerify.php';
-include 'ZhimaCreditAntifraudRiskList.php';
+//include 'ZmxyCustomerCertificationInitialize.php';
+//include 'ZhimaCustomerCertificationCertify.php';
+//include 'ZhimaAuthInfoAuthorize.php';
+//include 'ZmxyAuthRetrun.php';
+//include 'ZhimaCreditWatchlistiiGet.php';
+//include 'ZhimaCreditScoreGet.php';
+//include 'ZhimaCreditAntifraudScoreGet.php';
+//include 'ZhimaCreditAntifraudVerify.php';
+//include 'ZhimaCreditAntifraudRiskList.php';
 class Index extends Controller
 {
     //请求令牌
@@ -71,7 +71,7 @@ class Index extends Controller
                     $authUrl=$zhimaAuthInfo->zhimaAuthInfo($authInfo);//进入芝麻认证页面
                     if($authUrl){//有返回值
                         Header("HTTP/1.1 303 See Other");
-                        Header("Location: $authUrl");//跳转芝麻信用接口
+                        Header("Location: $authUrl");//跳转芝麻信用授权页面
                         exit;
                     }else{
                         $this->requestResult=false;
@@ -123,15 +123,14 @@ class Index extends Controller
             $inlineAttention=$inlineObj->zhimaWatchlist($resultArray);//执行行内关注实例
             $authInfo=$this->authInfo($resultArray['state']);//查询出用户的信息
             //授权成功,添加数据库信息
-            $db1::startTrans();
+            $db1->startTrans();
             try {
-                $db1::name('zhima_watch_list')
-                    ->insert(['uid'=>$authInfo['uid'],'result'=>$inlineAttention,'name'=>$authInfo['real_name'],'phone'=>$authInfo['cell_phone'],'idcard'=>$authInfo['idcard'],'openid'=>$this->open_id,'raw'=>$request->url(),'add_time'=>date('Y-m-d H-i-s')]);
+                $db1->execute('INSERT INTO lzh_zhima_watch_list (uid ,result,name,phone,idcard,openid,raw ,add_time) VALUES ("'.$authInfo['uid'].'","'.$inlineAttention.'","'.$authInfo['real_name'].'","'.$authInfo['cell_phone'].'","'.$authInfo['idcard'].'","'.$this->open_id.'","'.$request->url().'","'.date('Y-m-d H-i-s').'")');
                 // 提交事务
-                $db1::commit();
+                $db1->commit();
             } catch (\Exception $e) {
                 // 回滚事务
-                $db1::rollback();
+                $db1->rollback();
                 $this->requestMsg='授权失败';
                 $this->failPost();
                 return false;
@@ -141,15 +140,14 @@ class Index extends Controller
             $scoretion=$scoreObj->zhimaQueryScore($resultArray);//执行查询方法
             if($scoretion->success) {
                 //查询成功,添加数据库信息
-                $db1::startTrans();
+                $db1->startTrans();
                 try {
-                    $db1::name('zhima_score')
-                        ->insert(['uid'=>$authInfo['uid'],'phone'=>$authInfo['cell_phone'],'idcard'=>$authInfo['idcard'],'openid'=>$this->open_id,'score'=>$scoretion->zm_score,'raw'=>$request->url(),'add_time'=>date('Y-m-d H-i-s')]);
+                    $db1->execute('INSERT INTO lzh_zhima_score (uid ,phone,idcard,openid,score,raw,add_time) VALUES ("'.$authInfo['uid'].'","'.$authInfo['cell_phone'].'","'.$authInfo['idcard'].'","'.$this->open_id.'","'.$scoretion->zm_score.'","'.$request->url().'","'.date('Y-m-d H-i-s').'")');
                     // 提交事务
-                    $db1::commit();
+                    $db1->commit();
                 } catch (\Exception $e) {
                     // 回滚事务
-                    $db1::rollback();
+                    $db1->rollback();
                     $this->requestMsg='查询芝麻分失败';
                     $this->failPost();
                     return false;
@@ -161,15 +159,14 @@ class Index extends Controller
             }
             //================END=======================================
             //==============信用认证执行到结束START==========================
-            $db1::startTrans();
+            $db1->startTrans();
             try {
-                $db1::name('info_step')
-                    ->insert(['uid'=>$authInfo['uid'],'step'=>'credit_validate','add_time'=>date('Y-m-d H-i-s')]);
+                $db1->execute('INSERT INTO lzh_info_step (uid ,step,add_time) VALUES ("'.$authInfo['uid'].'","credit_validate","'.date('Y-m-d H-i-s').'")');
                 // 提交事务
-                $db1::commit();
+                $db1->commit();
             } catch (\Exception $e) {
                 // 回滚事务
-                $db1::rollback();
+                $db1->rollback();
                 $this->requestMsg='授权失败';
                 $this->failPost();
                 return false;
@@ -209,7 +206,7 @@ class Index extends Controller
      */
     private function isAuthorize($uuid){
         $db1 = Db::connect('database.db1');
-        $result = $db1::name('zhima_score')->where('uid', $uuid)->select();
+        $result =$db1->query('select * from lzh_zhima_score where uid="'.$uuid.'" ');
         if($result){
 //            return false;
             return true;
@@ -224,7 +221,7 @@ class Index extends Controller
      */
     private function authInfo($uuid){
         $db1 = Db::connect('database.db1');
-        $result = $db1::name('member_info')->where('uid', $uuid)->select();
+        $result =$db1->query('select * from lzh_member_info where uid="'.$uuid.'" ');
         return $result[0];
     }
 
@@ -411,7 +408,6 @@ class Index extends Controller
         return  $queryMemberInfo;
     }
 
-
     /**
      * @param $uid uid
      * @return mixed 返回身份详细信息
@@ -444,8 +440,6 @@ class Index extends Controller
         $queryPramInfo =$db1->query($sql);
         return $queryPramInfo;
     }
-
-
 
     private function getCreditQuery($midata,$querydatalist){
         $result='';//返回结果
